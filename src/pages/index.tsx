@@ -1,8 +1,8 @@
-import Blog from "@/components/Blog/Blog";
-import Contact from "@/components/Contact/Contact";
+import Blog from "@/components/blog/Blog";
+import Contact from "@/components/contact/Contact";
 import Hero from "@/components/hero/Hero";
 import Services from "@/components/services/Services";
-import Testimonial from "@/components/Testimonial/Testimonial";
+import Testimonials from "@/components/testimonial/Testimonials";
 import SEO from "@/components/ui/SEO";
 import Layout from "@/layouts/_layout";
 import React from "react";
@@ -14,7 +14,7 @@ export default function Home() {
       <Layout>
         <Hero />
         <Services />
-        <Testimonial />
+        <Testimonials />
         <Blog />
         <Contact />
       </Layout>

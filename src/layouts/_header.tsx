@@ -1,9 +1,18 @@
+import { UserIcon } from "@/components/icons/UserIcon";
 import Logo from "@/components/ui/Logo";
-import React from "react";
+import { useActiveScroll } from "@/utils/use-active-scroll";
+
+import { useRef } from "react";
+type DivElementRef = React.MutableRefObject<HTMLDivElement>;
 
 export default function Header() {
+  const siteHeaderRef = useRef() as DivElementRef;
+  useActiveScroll(siteHeaderRef, 40);
   return (
-    <header className="siteHeader w-full top-0 left-0 right-0 z-30 fixed bg-white py-3.5 border-b border-gray-100 transition-all md:bg-transparent md:border-b-0 md:py-[18px] lg:py-6">
+    <header
+      className="siteHeader w-full top-0 left-0 right-0 z-30 fixed bg-white py-3.5 border-b border-gray-100 transition-all md:bg-transparent md:border-b-0 md:py-[18px] lg:py-6"
+      ref={siteHeaderRef}
+    >
       <nav
         id="siteNavigation"
         className="container flex flex-wrap items-center justify-between"
@@ -70,7 +79,7 @@ export default function Header() {
         </div>
 
         <button className="aboutDrawerOpenBtn relative w-10 h-10 text-gray-800 !p-1 !text-lg bg-white border border-gray-100 rounded-full btn hover:bg-white-smoke hover:border-gray-100 active:bg-white-smoke active:border-gray-100 active:text-gray-600 before:absolute before:bg-black before:opacity-100 before:rounded-full after:absolute after:bg-black after:opacity-100 after:rounded-full before:right-0.5 before:top-0.5 before:w-1.5 before:h-1.5 after:right-0 after:top-0 after:w-2.5 after:h-2.5 after:animate-active-online 2ark:before:bg-white dark:after:bg-white">
-          <em className="fa-solid fa-user"></em>
+          <UserIcon className="w-[18px] h-[18px]" />
         </button>
 
         <button className="block p-3 -ml-3 md:hidden btn group -order-1 menuDrawerOpenBtn">

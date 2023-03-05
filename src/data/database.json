@@ -1,0 +1,132 @@
+{
+  "information": {
+    "name": "Devid Chester",
+    "aboutContent": "I am a frontend web developer. I can provide clean code and pixel perfect design. I also make website more & more interactive with web animations.",
+    "age": 24,
+    "phone": "",
+    "nationality": "American",
+    "language": "English, French",
+    "email": "",
+    "address": "121 King Street, Melbourne, Australia",
+    "freelanceStatus": "Available",
+    "socialLinks": {
+      "facebook": "https://facebook.com",
+      "twitter": "https://twitter.com",
+      "pinterest": "",
+      "behance": "",
+      "linkedin": "",
+      "dribbble": "",
+      "github": "https://github.com"
+    },
+    "brandImage": "/images/brand-image.jpg",
+    "aboutImage": "/images/about-image.jpg",
+    "aboutImageLg": "/images/about-image-lg.jpg",
+    "cvfile": "/files/empty.pdf"
+  },
+  "services": [
+    {
+      "id": 1,
+      "title": "Creative Design",
+      "subTitle": "Design",
+      "successRate": 85,
+      "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
+    },
+    {
+      "id": 2,
+      "title": "Web Development",
+      "subTitle": "Website",
+      "successRate": 90,
+      "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
+    },
+    {
+      "id": 3,
+      "title": "Brand & Identity",
+      "subTitle": "Identity",
+      "successRate": 95,
+      "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
+    },
+    {
+      "id": 4,
+      "title": "Mobile App Design",
+      "subTitle": "Mobile",
+      "successRate": 82,
+      "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "imageUrl": "../assets/images/author/author-1.png",
+      "name": "Iruka Akuchi",
+      "designation": "Developer at Git",
+      "rating": 4,
+      "comment": "Amazing Support! Totally all over my issues and we were changing it completely from being a place directory! Loving the theme! Amazing Support!"
+    },
+    {
+      "id": 2,
+      "imageUrl": "../assets/images/author/author-1.png",
+      "name": "Iruka Akuchi",
+      "designation": "Developer at Git",
+      "rating": 4,
+      "comment": "Amazing Support! Totally all over my issues and we were changing it completely from being a place directory! Loving the theme! Amazing Support!"
+    },
+    {
+      "id": 3,
+      "imageUrl": "../assets/images/author/author-1.png",
+      "name": "Iruka Akuchi",
+      "designation": "Developer at Git",
+      "rating": 4,
+      "comment": "Amazing Support! Totally all over my issues and we were changing it completely from being a place directory! Loving the theme! Amazing Support!"
+    },
+    {
+      "id": 4,
+      "imageUrl": "../assets/images/author/author-1.png",
+      "name": "Iruka Akuchi",
+      "designation": "Developer at Git",
+      "rating": 4,
+      "comment": "Amazing Support! Totally all over my issues and we were changing it completely from being a place directory! Loving the theme! Amazing Support!"
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "Mobile App Design",
+      "logo": "../assets/images/client/client-1.svg"
+    },
+    {
+      "id": 2,
+      "name": "Mobile App Design",
+      "logo": "../assets/images/client/client-2.svg"
+    },
+    {
+      "id": 3,
+      "name": "Mobile App Design",
+      "logo": "../assets/images/client/client-3.svg"
+    },
+    {
+      "id": 4,
+      "name": "Mobile App Design",
+      "logo": "../assets/images/client/client-4.svg"
+    },
+    {
+      "id": 5,
+      "name": "Mobile App Design",
+      "logo": "../assets/images/client/client-5.svg"
+    },
+    {
+      "id": 6,
+      "name": "Mobile App Design",
+      "logo": "../assets/images/client/client-6.svg"
+    },
+    {
+      "id": 7,
+      "name": "Mobile App Design",
+      "logo": "../assets/images/client/client-7.svg"
+    },
+    {
+      "id": 8,
+      "name": "Mobile App Design",
+      "logo": "../assets/images/client/client-8.svg"
+    }
+  ]
+}

@@ -19,12 +19,16 @@ export interface SkillItem {
 }
 export interface Testimonial {
   id: number | string;
-  className?: string;
-  clientThumbnail?: string;
-  clientName: string;
-  clientDesignation: string;
+  imageUrl?: string;
+  name: string;
+  designation: string;
   comment: string;
   rating?: number;
+}
+export interface Brand {
+  id: string | number;
+  name?: string;
+  imageUrl: string;
 }
 
 export interface ItemLabel {

@@ -1,43 +1,9 @@
-import { Service } from "@/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ServiceCard from "./ServiceCard";
-
+import { Service } from "@/types";
 import { Autoplay } from "swiper";
-
-const data = [
-  {
-    id: 1,
-    title: "Creative Design",
-    subTitle: "Design",
-    successRate: 85,
-    description:
-      "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you..",
-  },
-  {
-    id: 2,
-    title: "Web Development",
-    subTitle: "Website",
-    successRate: 90,
-    description:
-      "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you..",
-  },
-  {
-    id: 3,
-    title: "Brand & Identity",
-    subTitle: "Identity",
-    successRate: 95,
-    description:
-      "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you..",
-  },
-  {
-    id: 4,
-    title: "Mobile App Design",
-    subTitle: "Mobile",
-    successRate: 82,
-    description:
-      "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you..",
-  },
-];
+import { fetchServices } from "@/rest-client/fetch-data";
+import { useState, useEffect } from "react";
 
 const breakpoints = {
   0: {
@@ -59,6 +25,17 @@ const breakpoints = {
 };
 
 export default function Services() {
+  const [servicesData, setServicesData] = useState([]);
+  useEffect(() => {
+    const getAllServices = async () => {
+      const allServices = await fetchServices();
+      if (allServices) {
+        //@ts-ignore
+        setServicesData(allServices);
+      }
+    };
+    getAllServices();
+  }, []);
   return (
     <section
       className="py-[100px] md:py-28 lg:py-32 xl:py-[150px] dark:bg-dark"
@@ -75,7 +52,7 @@ export default function Services() {
             speed={1000}
             modules={[Autoplay]}
           >
-            {data.map((item: Service) => (
+            {servicesData.map((item: Service) => (
               <SwiperSlide key={item?.id}>
                 <ServiceCard service={item} />
               </SwiperSlide>

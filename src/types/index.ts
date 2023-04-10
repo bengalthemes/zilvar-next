@@ -1,3 +1,42 @@
+enum PortfolioType {
+  thumbnail = "thumbnail",
+  link = "link",
+  gallery = "gallery",
+  video = "video",
+  slide = "slide",
+}
+export type Attachment = {
+  id: string | number;
+  thumbnail: string;
+  original: string;
+  height?: number;
+  width?: number;
+};
+
+export interface Skill {
+  id: string | number;
+  title: string;
+  percentage: number;
+}
+export interface Information {
+  name?: string;
+  age?: string;
+  nationality?: string;
+  language?: string;
+  email?: string;
+  skype?: string;
+  phone?: string;
+  website?: string;
+  freelanceStatus?: string;
+  cvfile?: string;
+}
+export interface About {
+  information?: Information;
+  skills?: Skill[];
+  knowledge?: string[];
+  interests?: string[];
+}
+
 export interface Service {
   id: string | number;
   title: string;
@@ -19,16 +58,34 @@ export interface SkillItem {
 }
 export interface Testimonial {
   id: number | string;
-  imageUrl?: string;
+  imageUrl: string;
   name: string;
   designation: string;
   comment: string;
   rating?: number;
 }
+export interface Portfolio {
+  id: string | number;
+  title: string;
+  slug?: string;
+  category: string;
+  description?: string;
+  type: PortfolioType;
+  image: Attachment;
+  tags?: Tag[];
+  previewLink?: string;
+  publishedData?: string;
+  clientName: string;
+}
 export interface Brand {
   id: string | number;
   name?: string;
-  imageUrl: string;
+  logo: string;
+}
+export interface Tag {
+  id: string | number;
+  label: string;
+  slug: string;
 }
 
 export interface ItemLabel {

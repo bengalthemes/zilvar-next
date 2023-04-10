@@ -1,0 +1,62 @@
+{
+  "information": {
+    "name": "Jessy Doe",
+    "age": 27,
+    "phone": "+01 125 123 456",
+    "nationality": "American",
+    "language": "English, French",
+    "email": "demodemo@gmail.com",
+    "skype": "skype.demo",
+    "website": "www.demosite.com",
+    "freelanceStatus": "Available",
+    "cvfile": "/files/empty.pdf"
+  },
+  "skills": [
+    {
+      "id": 1,
+      "title": "Tailwind Css",
+      "percentage": 95
+    },
+    {
+      "id": 2,
+      "title": "React JS",
+      "percentage": 75
+    },
+    {
+      "id": 3,
+      "title": "WordPress",
+      "percentage": 85
+    },
+    {
+      "id": 4,
+      "title": "Vue JS",
+      "percentage": 70
+    },
+    {
+      "id": 5,
+      "title": "Webflow",
+      "percentage": 99
+    }
+  ],
+  "knowledge": [
+    "Website hosting",
+    "iOS and android apps",
+    "Create logo design",
+    "Design for print",
+    "Modern and mobile-ready",
+    "Advertising services include",
+    "Graphics and animations",
+    "Search engine marketing"
+  ],
+  "interests": [
+    "Reading",
+    "Shopping",
+    "Writing",
+    "Playing Tennis",
+    "Bicycling",
+    "Skating",
+    "Watch Movies",
+    "Swimming",
+    "Coding"
+  ]
+}

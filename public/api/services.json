@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Creative Design",
+    "subTitle": "Design",
+    "successRate": 85,
+    "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
+  },
+  {
+    "id": 2,
+    "title": "Web Development",
+    "subTitle": "Website",
+    "successRate": 90,
+    "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
+  },
+  {
+    "id": 3,
+    "title": "Brand & Identity",
+    "subTitle": "Identity",
+    "successRate": 95,
+    "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
+  },
+  {
+    "id": 4,
+    "title": "Mobile App Design",
+    "subTitle": "Mobile",
+    "successRate": 82,
+    "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
+  }
+]

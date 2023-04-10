@@ -2,12 +2,7 @@ import { Service } from "@/types";
 import ProgressBar from "../ui/ProgressBar";
 // import * as DOMPurify from "dompurify";
 
-interface ServiceCardProps {
-  className?: any;
-  service: Service;
-}
-
-export default function ServiceCard({ service }: ServiceCardProps) {
+export default function ServiceCard({ service }: { service: Service }) {
   // const sanitizedData = () => ({
   //   __html: DOMPurify.sanitize(description),
   // });
@@ -23,7 +18,11 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           {title}
         </h3>
       </div>
-      <ProgressBar title={progressTitle} progressPercentage={successRate} />
+      <ProgressBar
+        title={progressTitle}
+        progressPercentage={successRate}
+        variant="service"
+      />
       {description && (
         <div
           className="pt-6 italic prose md:pt-8 prose-strong:font-semibold prose-strong:text-gray-600 prose-p:text-[15px] prose-p:leading-loose prose-p:text-body dark:prose-strong:text-gray-200 dark:prose-p:text-dark-base -mb-1"

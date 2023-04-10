@@ -1,5 +1,6 @@
 import SEO from "@/components/ui/SEO";
 import { Html, Head, Main, NextScript } from "next/document";
+import { poppinsFont } from "./_app";
 
 export default function Document() {
   return (
@@ -7,7 +8,7 @@ export default function Document() {
       <Head>
         <SEO />
       </Head>
-      <body className="overflow-y-scroll bg-gray-1100 bg-[url('/grid.svg')]">
+      <body className={`overflow-y-scroll ${poppinsFont.className}`}>
         <Main />
         <NextScript />
       </body>

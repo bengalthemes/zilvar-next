@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Fresh Orange",
+    "slug": "fresh-orange",
+    "category": "Graphic Design",
+    "image": {
+      "id": 1,
+      "thumbnail": "/images/portfolio/portfolio-1.jpg",
+      "original": "/images/portfolio/portfolio-1.jpg",
+      "height": 465,
+      "width": 400
+    },
+    "type": "image"
+  },
+  {
+    "id": 2,
+    "title": "Lollipop Candy",
+    "slug": "lollipop-candy",
+    "category": "Web Development",
+    "image": {
+      "id": 1,
+      "thumbnail": "/images/portfolio/portfolio-2.jpg",
+      "original": "/images/portfolio/portfolio-2.jpg",
+      "height": 290,
+      "width": 400
+    },
+    "type": "link"
+  },
+  {
+    "id": 3,
+    "title": "Pretty Cherry",
+    "slug": "pretty-cherry",
+    "category": "Web Development",
+    "image": {
+      "id": 1,
+      "thumbnail": "/images/portfolio/portfolio-3.jpg",
+      "original": "/images/portfolio/portfolio-3.jpg",
+      "height": 490,
+      "width": 400
+    },
+    "type": "link"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Mobile App Design",
+    "logo": "/images/client/client-1.svg"
+  },
+  {
+    "id": 2,
+    "name": "Mobile App Design",
+    "logo": "/images/client/client-2.svg"
+  },
+  {
+    "id": 3,
+    "name": "Mobile App Design",
+    "logo": "/images/client/client-3.svg"
+  },
+  {
+    "id": 4,
+    "name": "Mobile App Design",
+    "logo": "/images/client/client-4.svg"
+  },
+  {
+    "id": 5,
+    "name": "Mobile App Design",
+    "logo": "/images/client/client-5.svg"
+  },
+  {
+    "id": 6,
+    "name": "Mobile App Design",
+    "logo": "/images/client/client-6.svg"
+  },
+  {
+    "id": 7,
+    "name": "Mobile App Design",
+    "logo": "/images/client/client-7.svg"
+  },
+  {
+    "id": 8,
+    "name": "Mobile App Design",
+    "logo": "/images/client/client-8.svg"
+  }
+]

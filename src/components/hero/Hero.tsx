@@ -1,5 +1,4 @@
 import SubHeading from "../ui/SubHeading";
-import heroThumb from "@/assets/images/hero.jpg";
 import Image from "next/image";
 import { AngleDownIcon } from "@/components/icons/AngleDownIcon";
 import Link from "next/link";
@@ -10,6 +9,7 @@ const data = {
 };
 
 export default function Hero() {
+  const heroThumb = "/images/hero.jpg";
   return (
     <section
       className="relative flex items-center justify-center h-screen overflow-hidden dark:bg-dark"

@@ -1,13 +1,30 @@
 import React from "react";
 import SubHeading from "./SubHeading";
+import cn from "classnames";
 
-export default function SectionHeading() {
+interface SectionHeadingProps {
+  className?: string;
+  serialNo?: string;
+  subHeading?: string;
+  headingFirstText: string;
+  headingLastText?: string;
+}
+
+export default function SectionHeading({
+  className = "mb-5 -mt-1 md:mb-0",
+  serialNo,
+  subHeading,
+  headingFirstText,
+  headingLastText,
+}: SectionHeadingProps) {
   return (
-    <div className="-mt-1 relative mb-8 md:mb-12 lg:mb-[70px]">
-      <SubHeading title="TESTIMONIALS" />
-      <h2 className="font-bold text-[32px] xl:text-[44px] mt-6 tracking-[1px] pt-0.5 leading-snug">
-        WHAT CLIENT SAY <br />
-        ABOUT <span className="text-stroke-1">MY WORK.</span>
+    <div className={cn("relative", className)}>
+      {subHeading && <SubHeading title={subHeading} serialNo={serialNo} />}
+      <h2 className="font-bold text-[32px] xl:text-[44px] mt-3.5 tracking-[1px] leading-snug">
+        {headingFirstText}{" "}
+        {headingLastText && (
+          <span className="text-stroke-1">{headingLastText}.</span>
+        )}
       </h2>
     </div>
   );

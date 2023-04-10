@@ -1,10 +1,11 @@
-import { fetchTestimonials } from "@/rest-client/fetch-data";
 import { Brand, Testimonial } from "@/types";
-import { useState, useEffect } from "react";
 import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import BrandCard from "./BrandCard";
 import TestimonialCard from "./TestimonialCard";
+import { useTestimonialsQuery } from "@/rest-client/get-testimonials";
+import { useBrandsQuery } from "@/rest-client/get-brands";
+import cn from "classnames";
 
 const breakpoints = {
   0: {
@@ -27,32 +28,50 @@ const breakpoints = {
   },
 };
 
-export default function Testimonials() {
-  const [testimonialsData, setTestimonialsData] = useState([]);
-  const [brandsData, setBrandsData] = useState([]);
+function Brands({ data }: { data: Brand[] }) {
+  return (
+    <div className="bg-white-smoke dark:bg-dark-smoke">
+      <div className="container">
+        <div className="ltr:lg:pr-10 rtl:lg:pr-8 rtl:lg:pl-2 lg:w-7/12 2xl:w-8/12">
+          <div className="py-6 swiper client-brands-swiper md:py-12">
+            <Swiper
+              breakpoints={breakpoints}
+              loop
+              autoplay={{
+                delay: 2000,
+              }}
+              speed={1000}
+              modules={[Autoplay]}
+            >
+              {data.map((item: Brand) => (
+                <SwiperSlide
+                  key={item?.id}
+                  className="flex items-center justify-center py-6"
+                >
+                  <BrandCard brand={item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-  useEffect(() => {
-    const getAllTestimonials = async () => {
-      const allTestimonials = await fetchTestimonials();
-      if (allTestimonials) {
-        //@ts-ignore
-        setTestimonialsData(allTestimonials);
-      }
-    };
-    const getAllBrands = async () => {
-      const allBrands = await fetchTestimonials();
-      if (allBrands) {
-        //@ts-ignore
-        setBrandsData(allBrands);
-      }
-    };
-    getAllTestimonials();
-    getAllBrands();
-  }, []);
+export default function Testimonials() {
+  const { data, isLoading, error } = useTestimonialsQuery();
+  const { data: brandsData } = useBrandsQuery();
   return (
     <section
       id="client"
-      className="dark:bg-dark pt-[100px] md:pt-28 lg:pt-[130px] xl:pt-[150px]"
+      className={cn(
+        "dark:bg-dark pt-[100px] md:pt-28 lg:pt-[130px] xl:pt-[150px]",
+        {
+          "pb-[100px] md:pb-28 lg:pb-[130px] xl:pb-[150px]":
+            !brandsData?.brands.data.length,
+        }
+      )}
     >
       <div className="container">
         <div className="flex flex-col md:items-end md:justify-between lg:flex-row">
@@ -74,7 +93,7 @@ export default function Testimonials() {
             </button>
           </div>
           <div className="w-full lg:w-5/12 2xl:w-4/12 ltr:lg:pl-3.5 ltr:2xl:pl-4 rtl:lg:pr-3.5 rtl:2xl:pr-4">
-            <div className="swiper testimonial-swiper lg:-mb-[134px] -mt-3 lg:mt-0 -mx-3 mb-[100px] shrink-0">
+            <div className="lg:-mb-[134px] -mt-3 lg:mt-0 -mx-3 mb-[100px] shrink-0">
               <Swiper
                 loop
                 autoplay={{
@@ -83,7 +102,7 @@ export default function Testimonials() {
                 speed={1000}
                 modules={[Autoplay]}
               >
-                {testimonialsData.map((item: Testimonial) => (
+                {data?.testimonials.data.map((item: Testimonial) => (
                   <SwiperSlide key={item?.id} className="p-3">
                     <TestimonialCard testimonial={item} />
                   </SwiperSlide>
@@ -105,32 +124,9 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
-      <div className="bg-white-smoke dark:bg-dark-smoke">
-        <div className="container">
-          <div className="ltr:lg:pr-10 rtl:lg:pr-8 rtl:lg:pl-2 lg:w-7/12 2xl:w-8/12">
-            <div className="py-6 swiper client-brands-swiper md:py-12">
-              <Swiper
-                breakpoints={breakpoints}
-                loop
-                autoplay={{
-                  delay: 2000,
-                }}
-                speed={1000}
-                modules={[Autoplay]}
-              >
-                {brandsData.map((item: Brand) => (
-                  <SwiperSlide
-                    key={item?.id}
-                    className="flex items-center justify-center py-6"
-                  >
-                    <BrandCard />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-          </div>
-        </div>
-      </div>
+      {brandsData?.brands.data.length && (
+        <Brands data={brandsData?.brands.data} />
+      )}
     </section>
   );
 }

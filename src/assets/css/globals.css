@@ -103,7 +103,7 @@
     animation-iteration-count: infinite;
   }
 }
-.mainMenu li.active > a {
+.mainMenu li > a.active {
   @apply before:opacity-100 before:bottom-0 hover:dark:!text-white;
 }
 #mobileMenu .mainMenu li.active > a {

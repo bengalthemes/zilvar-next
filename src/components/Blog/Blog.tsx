@@ -1,11 +1,11 @@
-import React from "react";
 import BlogCard from "./BlogCard";
+import { Element } from "react-scroll";
 
 export default function Blog() {
   return (
-    <section
+    <Element
       className="py-[100px] md:py-28 lg:py-32 xl:py-[150px] dark:bg-dark"
-      id="blog"
+      name="blog"
     >
       <div className="container">
         <div className="mb-12 md:flex md:justify-between md:items-end lg:mb-14 xl:mb-[70px]">
@@ -59,6 +59,6 @@ export default function Blog() {
           </a>
         </div>
       </div>
-    </section>
+    </Element>
   );
 }

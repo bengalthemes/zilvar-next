@@ -1,7 +1,7 @@
 import SubHeading from "../ui/SubHeading";
 import Image from "next/image";
 import { AngleDownIcon } from "@/components/icons/AngleDownIcon";
-import Link from "next/link";
+import { Element, Link } from "react-scroll";
 
 const data = {
   welcomeText: "HELLO!",
@@ -11,9 +11,9 @@ const data = {
 export default function Hero() {
   const heroThumb = "/images/hero.jpg";
   return (
-    <section
+    <Element
       className="relative flex items-center justify-center h-screen overflow-hidden dark:bg-dark"
-      id="home"
+      name="home"
     >
       <div className="absolute bottom-0 right-0 h-full bg-no-repeat bg-cover bg-[70%_bottom] w-full md:w-[calc(50%+100px)] xl:w-[calc(50%+200px)] before:absolute before:top-0 before:z-10 before:w-full before:h-full before:bg-white before:bg-opacity-60 md:before:bg-opacity-[0.15] dark:before:bg-black dark:before:bg-opacity-50 rtl:hidden">
         <Image
@@ -60,12 +60,15 @@ export default function Hero() {
       </div>
 
       <Link
-        href="#work"
         className="bottom-2.5 z-10 absolute leading-relaxed ltr:left-4 rtl:right-4 uppercase flex flex-col items-center text-xs font-semibold text-black ltr:md:left-[calc(50%-344px)] rtl:md:right-[calc(50%-344px)] ltr:lg:left-[calc(50%-462px)] rtl:lg:right-[calc(50%-462px)] ltr:xl:left-[calc(50%-556px)] rtl:xl:right-[calc(50%-556px)] ltr:2xl:left-[calc(50%-656px)] rtl:2xl:right-[calc(50%-656px)] dark:text-white dark:hover:text-opacity-80 scroll-indicator-wrapper"
+        to="work"
+        spy={true}
+        smooth={true}
+        duration={500}
       >
         Scroll
         <AngleDownIcon className="animate-bounce w-3 h-3.5 mt-1.5 opacity-90" />
       </Link>
-    </section>
+    </Element>
   );
 }

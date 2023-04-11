@@ -1,5 +1,5 @@
 import { Portfolio } from "@/types";
-import Link from "../ui/Link";
+import Link from "../ui/AnchorLink";
 import Image from "next/image";
 import PortfolioTypeIconText from "./portfolio-icon-text";
 

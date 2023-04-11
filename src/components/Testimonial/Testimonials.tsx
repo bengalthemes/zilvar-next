@@ -6,6 +6,7 @@ import TestimonialCard from "./TestimonialCard";
 import { useTestimonialsQuery } from "@/rest-client/get-testimonials";
 import { useBrandsQuery } from "@/rest-client/get-brands";
 import cn from "classnames";
+import { Element } from "react-scroll";
 
 const breakpoints = {
   0: {
@@ -63,8 +64,8 @@ export default function Testimonials() {
   const { data, isLoading, error } = useTestimonialsQuery();
   const { data: brandsData } = useBrandsQuery();
   return (
-    <section
-      id="client"
+    <Element
+      name="client"
       className={cn(
         "dark:bg-dark pt-[100px] md:pt-28 lg:pt-[130px] xl:pt-[150px]",
         {
@@ -127,6 +128,6 @@ export default function Testimonials() {
       {brandsData?.brands.data.length && (
         <Brands data={brandsData?.brands.data} />
       )}
-    </section>
+    </Element>
   );
 }

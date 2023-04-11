@@ -2,6 +2,7 @@ import SubHeading from "../ui/SubHeading";
 import Image from "next/image";
 import { AngleDownIcon } from "@/components/icons/AngleDownIcon";
 import Link from "next/link";
+import { useDrawer } from "../drawer-views/DrawerContext";
 
 const data = {
   welcomeText: "HELLO!",
@@ -10,6 +11,7 @@ const data = {
 
 export default function Hero() {
   const heroThumb = "/images/hero.jpg";
+  const { openDrawer } = useDrawer()
   return (
     <section
       className="relative flex items-center justify-center h-screen overflow-hidden dark:bg-dark"
@@ -37,7 +39,7 @@ export default function Hero() {
           <div className="mb-8 text-sm italic font-medium !leading-relaxed text-gray-700 dark:text-gray-300 capitalize md:text-base md:mb-10">
             {data.designation}
           </div>
-          <button className="btn btn-primary about-drawer-open-btn before:bg-white md:before:bg-gray-100">
+          <button onClick={()=> openDrawer('ABOUT_VIEW')} className="btn btn-primary about-drawer-open-btn before:bg-white md:before:bg-gray-100">
             <span>ABOUT ME</span>
           </button>
         </div>

@@ -18,7 +18,7 @@ export const poppinsFont = Poppins({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
-      <main>
+      <main className={poppinsFont.className}>
         <Component {...pageProps} />
       </main>
       <DrawersContainer />

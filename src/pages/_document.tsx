@@ -8,7 +8,7 @@ export default function Document() {
       <Head>
         <SEO />
       </Head>
-      <body className={`overflow-y-scroll ${poppinsFont.className}`}>
+      <body className={`overflow-y-scroll `}>
         <Main />
         <NextScript />
       </body>

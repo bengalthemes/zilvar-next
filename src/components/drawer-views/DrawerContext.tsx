@@ -11,7 +11,6 @@ export function useDrawer() {
   const closeDrawer = () => {
     setState({ ...state, isOpen: false });
   };
-  console.log(state, "test");
   return {
     ...state,
     openDrawer,

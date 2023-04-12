@@ -7,19 +7,34 @@ import Testimonials from "@/components/testimonial/Testimonials";
 import SEO from "@/components/ui/SEO";
 import Layout from "@/layouts/_layout";
 import React from "react";
+import { Element } from "react-scroll";
 
 export default function Home() {
   return (
     <>
       <SEO />
       <Layout>
-        <Hero />
-        <Services />
+        <Element name="home">
+          <Hero />
+          <Services />
+        </Element>
+        <Element name="work">
+
         <Portfolios />
+        </Element>
+        <Element name="client">
+
         <Testimonials />
-        {/* 
+        </Element>
+        <Element name="blog">
+
         <Blog />
-        <Contact /> */}
+        </Element>
+        <Element name="contact">
+
+        <Contact />
+        </Element>
+        
       </Layout>
     </>
   );

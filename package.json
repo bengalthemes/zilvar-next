@@ -29,6 +29,7 @@
     "react-icons": "^4.8.0",
     "react-masonry-component": "^6.3.0",
     "react-query": "^3.39.3",
+    "react-scroll": "^1.8.9",
     "swiper": "^9.1.0",
     "typescript": "4.9.5"
   },
@@ -36,6 +37,7 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/isotope-layout": "^3.0.9",
+    "@types/react-scroll": "^1.8.6",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"

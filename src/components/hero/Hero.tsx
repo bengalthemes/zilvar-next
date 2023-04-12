@@ -1,25 +1,28 @@
 import SubHeading from "../ui/SubHeading";
 import Image from "next/image";
 import { AngleDownIcon } from "@/components/icons/AngleDownIcon";
-import Link from "next/link";
-import { useDrawer } from "../drawer-views/DrawerContext";
+import { useDrawer } from "@/components/drawer-views/DrawerContext";
+import { Link } from "react-scroll";
 
-const data = {
+const heroData = {
+  heroThumb: "/images/hero.jpg",
+  firstName: 'JESSY',
+  lastName: 'DOE',
   welcomeText: "HELLO!",
   designation: "Professional Creative Web Developer",
+  aboutButtonText: 'ABOUT ME'
 };
 
 export default function Hero() {
-  const heroThumb = "/images/hero.jpg";
   const { openDrawer } = useDrawer()
   return (
     <section
       className="relative flex items-center justify-center h-screen overflow-hidden dark:bg-dark"
-      id="home"
+      
     >
       <div className="absolute bottom-0 right-0 h-full bg-no-repeat bg-cover bg-[70%_bottom] w-full md:w-[calc(50%+100px)] xl:w-[calc(50%+200px)] before:absolute before:top-0 before:z-10 before:w-full before:h-full before:bg-white before:bg-opacity-60 md:before:bg-opacity-[0.15] dark:before:bg-black dark:before:bg-opacity-50 rtl:hidden">
         <Image
-          src={heroThumb}
+          src={heroData.heroThumb}
           fill
           className="object-cover"
           alt="Hero Banner"
@@ -32,15 +35,15 @@ export default function Hero() {
 
       <div className="container">
         <div className="relative z-20 pt-16 xl:pt-8 lg:w-7/12 xl:w-8/12">
-          <SubHeading title={data.welcomeText} variant="medium" />
+          <SubHeading title={heroData.welcomeText} variant="medium" />
           <h1 className="font-extrabold text-black dark:text-white tracking-[2px] !leading-[1.15em] mt-7 mb-2 text-[42px] sm:text-5xl md:text-[56px] xl:mt-9 xl:mb-2.5 2xl:mb-3 xl:text-[68px] 2xl:text-[76px]">
-            I'M <span className="text-stroke-1">JESSY</span> DOE
+            I'M <span className="text-stroke-1">{heroData.firstName}</span> {heroData.lastName}
           </h1>
           <div className="mb-8 text-sm italic font-medium !leading-relaxed text-gray-700 dark:text-gray-300 capitalize md:text-base md:mb-10">
-            {data.designation}
+            {heroData.designation}
           </div>
           <button onClick={()=> openDrawer('ABOUT_VIEW')} className="btn btn-primary about-drawer-open-btn before:bg-white md:before:bg-gray-100">
-            <span>ABOUT ME</span>
+            <span>{heroData.aboutButtonText}</span>
           </button>
         </div>
       </div>
@@ -62,8 +65,11 @@ export default function Hero() {
       </div>
 
       <Link
-        href="#work"
-        className="bottom-2.5 z-10 absolute leading-relaxed ltr:left-4 rtl:right-4 uppercase flex flex-col items-center text-xs font-semibold text-black ltr:md:left-[calc(50%-344px)] rtl:md:right-[calc(50%-344px)] ltr:lg:left-[calc(50%-462px)] rtl:lg:right-[calc(50%-462px)] ltr:xl:left-[calc(50%-556px)] rtl:xl:right-[calc(50%-556px)] ltr:2xl:left-[calc(50%-656px)] rtl:2xl:right-[calc(50%-656px)] dark:text-white dark:hover:text-opacity-80 scroll-indicator-wrapper"
+        className="bottom-2.5 z-10 absolute leading-relaxed ltr:left-4 rtl:right-4 uppercase flex flex-col items-center text-xs font-semibold text-black ltr:md:left-[calc(50%-344px)] rtl:md:right-[calc(50%-344px)] ltr:lg:left-[calc(50%-462px)] rtl:lg:right-[calc(50%-462px)] ltr:xl:left-[calc(50%-556px)] rtl:xl:right-[calc(50%-556px)] ltr:2xl:left-[calc(50%-656px)] rtl:2xl:right-[calc(50%-656px)] dark:text-white dark:hover:text-opacity-80 cursor-pointer"
+        to="work"
+        spy={true}
+        smooth={true}
+        duration={500}
       >
         Scroll
         <AngleDownIcon className="animate-bounce w-3 h-3.5 mt-1.5 opacity-90" />

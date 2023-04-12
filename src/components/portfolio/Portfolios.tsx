@@ -5,6 +5,7 @@ import Alert from "../ui/Alert";
 import { Portfolio } from "@/types";
 import PortfolioCard from "./PortfolioCard";
 import Masonry from "react-masonry-component";
+import { Element } from "react-scroll";
 
 export default function Portfolios() {
   // init one ref to store the future isotope object
@@ -39,7 +40,7 @@ export default function Portfolios() {
   return (
     <section
       className="py-[100px] md:py-28 lg:py-32 xl:py-[150px] bg-white-smoke dark:bg-dark-smoke"
-      id="work"
+      
     >
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end mb-[52px] md:gap-5 md:justify-between lg:mb-[70px]">

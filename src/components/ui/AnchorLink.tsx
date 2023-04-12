@@ -9,7 +9,7 @@ export interface LinkProps extends NextLinkProps {
   children?: React.ReactNode;
 }
 
-const Link: React.FC<LinkProps> = ({
+const AnchorLink: React.FC<LinkProps> = ({
   children,
   variant,
   title,
@@ -34,4 +34,4 @@ const Link: React.FC<LinkProps> = ({
   );
 };
 
-export default Link;
+export default AnchorLink;

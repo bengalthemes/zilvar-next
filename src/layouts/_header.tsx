@@ -2,6 +2,14 @@ import { useDrawer } from "@/components/drawer-views/DrawerContext";
 import { UserIcon } from "@/components/icons/UserIcon";
 import Logo from "@/components/ui/Logo";
 import { useActiveScroll } from "@/utils/use-active-scroll";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 import { useRef } from "react";
 type DivElementRef = React.MutableRefObject<HTMLDivElement>;
@@ -33,50 +41,65 @@ export default function Header() {
         <Logo />
         <div className="hidden py-px ltr:ml-auto rtl:mr-auto md:flex ltr:md:mr-8 ltr:lg:mr-9 rtl:md:ml-8 rtl:lg:ml-9">
           <ul className="flex -mx-4 text-[15px] lg:-mx-5 mainMenu">
-            <li className="relative inline-block w-full mx-4 lg:mx-5 active">
-              <a
-                href="#home"
-                data-scroll="home"
-                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 before:-translate-x-1/2 before2transition-all before:opacity-0 dark:before:bg-white"
+            <li className="relative inline-block w-full mx-4 lg:mx-5">
+              <Link
+                activeClass="active"
+                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 cursor-pointer before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
+                to="home"
+                spy={true}
+                smooth={true}
+                duration={500}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="relative inline-block w-full mx-4 lg:mx-5">
-              <a
-                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 before:-translate-x-1/2 before2transition-all before:opacity-0 dark:before:bg-white"
-                href="#work"
-                data-scroll="work"
+              <Link
+                activeClass="active"
+                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 cursor-pointer before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
+                to="work"
+                spy={true}
+                smooth={true}
+                duration={500}
               >
                 Portfolio
-              </a>
+              </Link>
             </li>
             <li className="relative inline-block w-full mx-4 lg:mx-5">
-              <a
-                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 before:-translate-x-1/2 before2transition-all before:opacity-0 dark:before:bg-white"
-                href="#client"
-                data-scroll="client"
+              <Link
+                activeClass="active"
+                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 cursor-pointer before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
+                to="client"
+                spy={true}
+                smooth={true}
+                duration={500}
               >
                 Client
-              </a>
+              </Link>
             </li>
             <li className="relative inline-block w-full mx-4 lg:mx-5">
-              <a
-                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 before:-translate-x-1/2 before2transition-all before:opacity-0 dark:before:bg-white"
-                href="#blog"
-                data-scroll="blog"
+              <Link
+                activeClass="active"
+                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 cursor-pointer before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
+                to="blog"
+                spy={true}
+                smooth={true}
+                duration={500}
               >
                 Blog
-              </a>
+              </Link>
             </li>
             <li className="relative inline-block w-full mx-4 lg:mx-5">
-              <a
-                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 before:-translate-x-1/2 before2transition-all before:opacity-0 dark:before:bg-white"
-                href="#contact"
-                data-scroll="contact"
+              <Link
+                activeClass="active"
+                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 cursor-pointer before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={500}
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

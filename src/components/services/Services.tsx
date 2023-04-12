@@ -30,9 +30,8 @@ export default function Services() {
   if (error) return <Alert message={error?.message} />;
 
   return (
-    <section
+    <div
       className="py-[100px] md:py-28 lg:py-32 xl:py-[150px] dark:bg-dark"
-      id="services"
     >
       {isLoading ? (
         <div className="text-center">Loading...</div>
@@ -57,6 +56,6 @@ export default function Services() {
           </div>
         </div>
       )}
-    </section>
+    </div>
   );
 }

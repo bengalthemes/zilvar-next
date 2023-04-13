@@ -1,18 +1,8 @@
 import React from "react";
 
 export type MODAL_VIEWS =
-  | "REGISTER"
-  | "LOGIN_VIEW"
-  | "FORGOT_PASSWORD_VIEW"
-  | "PRODUCT_DETAILS"
-  | "ABUSE_REPORT"
-  | "QUESTION_FORM"
-  | "REVIEW_RATING"
-  | "REVIEW_IMAGE_POPOVER"
-  | "USE_NEW_PAYMENT"
-  | "PAYMENT_MODAL"
-  | "ADD_NEW_CARD"
-  | "DELETE_CARD_MODAL";
+  | "PORTFOLIO_MODAL"
+  | "CONTACT_MODAL";
 
 interface State {
   view: MODAL_VIEWS | undefined;

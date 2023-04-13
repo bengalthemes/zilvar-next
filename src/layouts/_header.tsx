@@ -111,7 +111,10 @@ export default function Header() {
           <UserIcon className="w-[18px] h-[18px]" />
         </button>
 
-        <button className="block p-3 -ml-3 md:hidden btn group -order-1 menuDrawerOpenBtn">
+        <button
+          className="block p-3 -ml-3 md:hidden btn group -order-1"
+          onClick={() => openDrawer("MOBILE_MENU", true)}
+        >
           <span className="flex flex-col items-start justify-center w-7 gap-y-1.5">
             <em className="h-0.5 transition-all flex rounded-2xl bg-gray-900 w-1/2 group-hover:w-full"></em>
             <em className="h-0.5 transition-all flex rounded-2xl bg-gray-900 w-full"></em>

@@ -1,16 +1,11 @@
-import { CloseIcon } from "@/components/icons/close-icon";
+
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useRef } from "react";
-import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import { getDirection } from "@/lib/constants";
 
 export default function Modal({ open, onClose, children }: any) {
   const cancelButtonRef = useRef(null);
-  const { t } = useTranslation("common");
 
-  const { locale } = useRouter();
-  const dir = getDirection(locale);
   return (
     <Transition show={open} as={Fragment}>
       <Dialog
@@ -20,7 +15,6 @@ export default function Modal({ open, onClose, children }: any) {
         static
         open={open}
         onClose={onClose}
-        dir={dir}
       >
         <div className="min-h-full text-center md:p-5">
           <Transition.Child
@@ -58,8 +52,7 @@ export default function Modal({ open, onClose, children }: any) {
                 ref={cancelButtonRef}
                 className="absolute top-4 z-[60] inline-block outline-none focus:outline-0 ltr:right-4 rtl:left-4 lg:hidden"
               >
-                <span className="sr-only">{t("text-close")}</span>
-                <CloseIcon className="w-4 h-4" />
+                <span className="sr-only">close</span>
               </button>
               {children}
             </Dialog.Panel>

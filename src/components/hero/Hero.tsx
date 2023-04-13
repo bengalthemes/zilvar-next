@@ -1,4 +1,4 @@
-import SubHeading from "../ui/SubHeading";
+import SubHeading from "@/components/ui/SubHeading";
 import Image from "next/image";
 import { AngleDownIcon } from "@/components/icons/AngleDownIcon";
 import { useDrawer } from "@/components/drawer-views/DrawerContext";
@@ -6,20 +6,17 @@ import { Link } from "react-scroll";
 
 const heroData = {
   heroThumb: "/images/hero.jpg",
-  firstName: 'JESSY',
-  lastName: 'DOE',
+  firstName: "JESSY",
+  lastName: "DOE",
   welcomeText: "HELLO!",
   designation: "Professional Creative Web Developer",
-  aboutButtonText: 'ABOUT ME'
+  aboutButtonText: "ABOUT ME",
 };
 
 export default function Hero() {
-  const { openDrawer } = useDrawer()
+  const { openDrawer } = useDrawer();
   return (
-    <section
-      className="relative flex items-center justify-center h-screen overflow-hidden dark:bg-dark"
-      
-    >
+    <section className="relative flex items-center justify-center h-screen overflow-hidden dark:bg-dark">
       <div className="absolute bottom-0 right-0 h-full bg-no-repeat bg-cover bg-[70%_bottom] w-full md:w-[calc(50%+100px)] xl:w-[calc(50%+200px)] before:absolute before:top-0 before:z-10 before:w-full before:h-full before:bg-white before:bg-opacity-60 md:before:bg-opacity-[0.15] dark:before:bg-black dark:before:bg-opacity-50 rtl:hidden">
         <Image
           src={heroData.heroThumb}
@@ -37,12 +34,16 @@ export default function Hero() {
         <div className="relative z-20 pt-16 xl:pt-8 lg:w-7/12 xl:w-8/12">
           <SubHeading title={heroData.welcomeText} variant="medium" />
           <h1 className="font-extrabold text-black dark:text-white tracking-[2px] !leading-[1.15em] mt-7 mb-2 text-[42px] sm:text-5xl md:text-[56px] xl:mt-9 xl:mb-2.5 2xl:mb-3 xl:text-[68px] 2xl:text-[76px]">
-            I'M <span className="text-stroke-1">{heroData.firstName}</span> {heroData.lastName}
+            I'M <span className="text-stroke-1">{heroData.firstName}</span>{" "}
+            {heroData.lastName}
           </h1>
           <div className="mb-8 text-sm italic font-medium !leading-relaxed text-gray-700 dark:text-gray-300 capitalize md:text-base md:mb-10">
             {heroData.designation}
           </div>
-          <button onClick={()=> openDrawer('ABOUT_VIEW')} className="btn btn-primary about-drawer-open-btn before:bg-white md:before:bg-gray-100">
+          <button
+            onClick={() => openDrawer("ABOUT_VIEW")}
+            className="btn btn-primary about-drawer-open-btn before:bg-white md:before:bg-gray-100"
+          >
             <span>{heroData.aboutButtonText}</span>
           </button>
         </div>

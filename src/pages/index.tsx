@@ -19,22 +19,17 @@ export default function Home() {
           <Services />
         </Element>
         <Element name="work">
-
-        <Portfolios />
+          <Portfolios />
         </Element>
         <Element name="client">
-
-        <Testimonials />
+          <Testimonials />
         </Element>
         <Element name="blog">
-
-        <Blog />
+          <Blog />
         </Element>
         <Element name="contact">
-
-        <Contact />
+          <Contact />
         </Element>
-        
       </Layout>
     </>
   );

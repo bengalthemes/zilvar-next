@@ -2,11 +2,17 @@ import { Portfolio } from "@/types";
 import Link from "../ui/AnchorLink";
 import Image from "next/image";
 import PortfolioTypeIconText from "./portfolio-icon-text";
+import classNames from "classnames";
 
 export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
-  const { title, image, type, category } = portfolio;
+  const { title, image, type, category, categoryFilter } = portfolio;
   return (
-    <div className="w-full px-2 md:w-1/2 lg:w-1/3 md:px-4 xl:px-5 2xl:px-7 filterItem graphic brand modalPortfolioToggle">
+    <div
+      className={classNames(
+        "w-full px-2 md:w-1/2 lg:w-1/3 md:px-4 xl:px-5 2xl:px-7 filterItem modalPortfolioToggle",
+        categoryFilter
+      )}
+    >
       <div className="inline-flex flex-col mb-6 xl:mb-8 group">
         <div className="relative inline-block overflow-hidden">
           <div className="relative transition-portfolio group-hover:opacity-80 group-hover:scale-[0.98]">

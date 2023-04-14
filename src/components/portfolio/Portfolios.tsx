@@ -1,47 +1,55 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { usePortfoliosQuery } from "@/rest-client/get-portfolios";
 import SectionHeading from "../ui/SectionHeading";
 import Alert from "../ui/Alert";
 import { Portfolio } from "@/types";
 import PortfolioCard from "./PortfolioCard";
-import Masonry from "react-masonry-component";
-import { Element } from "react-scroll";
 
 export default function Portfolios() {
-  // init one ref to store the future isotope object
-  const isotope = React.useRef();
-  // store the filter keyword in a state
-  const [filterKey, setFilterKey] = React.useState("*");
+  const isotope = useRef();
+  const [filterKey, setFilterKey] = useState("filterItem");
+  useEffect(() => {
+    (async () => {
+      // Dynamically load Isotope
+      const Isotope = (await import("isotope-layout")).default;
 
-  // initialize an Isotope object with configs
-  // React.useEffect(() => {
-  //   if (typeof window === "undefined") {
-  //     //@ts-ignore
-  //     isotope.current = new Isotope(".portfolioItemsContainer", {
-  //       itemSelector: ".filterItem",
-  //       layoutMode: "fitRows",
-  //     });
-  //   }
-  //   // @ts-ignore
-  //   // return () => isotope.current?.destroy();
-  // }, []);
+      //@ts-ignore
+      isotope.current = new Isotope(".portfolioItemsContainer", {
+        itemSelector: ".filterItem",
+        percentPosition: true,
+        masonry: {
+          columnWidth: ".filterItem",
+        },
+        //@ts-ignore
+        animationOptions: {
+          duration: 750,
+          easing: "linear",
+          queue: false,
+        },
+      });
+    })();
 
-  // handling filter key change
-  // React.useEffect(() => {
-  //   if (filterKey === "*") isotope.current?.arrange({ filter: `*` });
-  //   else isotope.current?.arrange({ filter: `.${filterKey}` });
-  // }, [filterKey]);
+    // cleanup
+    //@ts-ignore
+    return () => isotope.current?.destroy();
+  }, []);
+
+  useEffect(() => {
+    if (isotope.current) {
+      filterKey === "*"
+        ? isotope.current.arrange({ filter: `*` })
+        : isotope.current.arrange({ filter: `.${filterKey}` });
+    }
+  }, [filterKey]);
 
   const handleFilterKeyChange = (key: string) => () => setFilterKey(key);
+
   const { data, isLoading, error } = usePortfoliosQuery();
 
   if (error) return <Alert message={error?.message} />;
 
   return (
-    <section
-      className="py-[100px] md:py-28 lg:py-32 xl:py-[150px] bg-white-smoke dark:bg-dark-smoke"
-      
-    >
+    <section className="py-[100px] md:py-28 lg:py-32 xl:py-[150px] bg-white-smoke dark:bg-dark-smoke">
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end mb-[52px] md:gap-5 md:justify-between lg:mb-[70px]">
           <SectionHeading

@@ -1,5 +1,5 @@
 import { Brand, Testimonial } from "@/types";
-import { Autoplay } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import BrandCard from "./BrandCard";
 import TestimonialCard from "./TestimonialCard";
@@ -8,6 +8,7 @@ import { useBrandsQuery } from "@/rest-client/get-brands";
 import cn from "classnames";
 import { Element } from "react-scroll";
 import NextPrevButton from "../ui/NextPrevButton";
+import "swiper/css/navigation";
 
 const breakpoints = {
   0: {
@@ -96,12 +97,16 @@ export default function Testimonials() {
           <div className="w-full lg:w-5/12 2xl:w-4/12 ltr:lg:pl-3.5 ltr:2xl:pl-4 rtl:lg:pr-3.5 rtl:2xl:pr-4">
             <div className="lg:-mb-[134px] -mt-3 lg:mt-0 -mx-3 mb-[100px] shrink-0">
               <Swiper
+                modules={[Autoplay, Navigation]}
                 loop
                 autoplay={{
                   delay: 2000,
                 }}
+                navigation={{
+                  nextEl: "#testimonialSlideNext",
+                  prevEl: "#testimonialSlidePrev",
+                }}
                 speed={1000}
-                modules={[Autoplay]}
               >
                 {data?.testimonials.data.map((item: Testimonial) => (
                   <SwiperSlide key={item?.id} className="p-3">
@@ -109,7 +114,11 @@ export default function Testimonials() {
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <NextPrevButton className="justify-center px-3 mt-6 lg:justify-end" nextActiveId="" prevActiveId="" />
+              <NextPrevButton
+                className="justify-center px-3 mt-6 lg:justify-end"
+                nextActiveId="testimonialSlideNext"
+                prevActiveId="testimonialSlidePrev"
+              />
             </div>
           </div>
         </div>

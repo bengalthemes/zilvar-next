@@ -69,6 +69,7 @@ export interface Portfolio {
   title: string;
   slug?: string;
   category: string;
+  categoryFilter?: string[];
   description?: string;
   type: PortfolioType;
   image: Attachment;

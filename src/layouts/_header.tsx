@@ -1,5 +1,5 @@
 import { useDrawer } from "@/components/drawer-views/DrawerContext";
-import { UserIcon } from "@/components/icons/UserIcon";
+// import { UserIcon } from "@/components/icons/UserIcon";
 import Logo from "@/components/ui/Logo";
 import { useActiveScroll } from "@/utils/use-active-scroll";
 import {
@@ -108,7 +108,7 @@ export default function Header() {
           className="aboutDrawerOpenBtn relative w-10 h-10 text-gray-800 !p-1 !text-lg bg-white border border-gray-100 rounded-full btn hover:bg-white-smoke hover:border-gray-100 active:bg-white-smoke active:border-gray-100 active:text-gray-600 before:absolute before:bg-black before:opacity-100 before:rounded-full after:absolute after:bg-black after:opacity-100 after:rounded-full before:right-0.5 before:top-0.5 before:w-1.5 before:h-1.5 after:right-0 after:top-0 after:w-2.5 after:h-2.5 after:animate-active-online 2ark:before:bg-white dark:after:bg-white"
           onClick={() => openDrawer("ABOUT_VIEW")}
         >
-          <UserIcon className="w-[18px] h-[18px]" />
+          {/* <UserIcon className="w-[18px] h-[18px]" /> */}
         </button>
 
         <button

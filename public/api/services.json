@@ -26,5 +26,19 @@
     "subTitle": "Mobile",
     "successRate": 82,
     "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
+  },
+  {
+    "id": 5,
+    "title": "Mobile App Design",
+    "subTitle": "Mobile",
+    "successRate": 82,
+    "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
+  },
+  {
+    "id": 6,
+    "title": "Mobile App Design",
+    "subTitle": "Mobile",
+    "successRate": 82,
+    "description": "<strong>200 Project Done.</strong> We will make you a brand that is catchy and leaves a trace. Your target group will never forget you.."
   }
 ]

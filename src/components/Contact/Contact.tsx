@@ -1,5 +1,6 @@
 import { Element } from "react-scroll";
 import { useModal } from "../ui/modal/context";
+import Button from "../ui/Button";
 
 export default function Contact() {
   const { openModal } = useModal();
@@ -13,12 +14,15 @@ export default function Contact() {
           <h2 className="text-[32px] font-extrabold leading-tight mb-6 md:mb-8 pb-1 md:pb-0.5 sm:text-[40px] md:text-5xl lg:text-[56px]">
             <span className="text-stroke-1">Let&apos;s Work</span> Together!
           </h2>
-          <button
+          <Button onClick={() => openModal("CONTACT_MODAL")}>
+            Let&apos;s Talk
+          </Button>
+          {/* <button
             className="btn btn-contact modalToggle"
             onClick={() => openModal("CONTACT_MODAL")}
           >
             Let&apos;s Talk
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

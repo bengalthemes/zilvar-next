@@ -30,9 +30,7 @@ export default function Services() {
   if (error) return <Alert message={error?.message} />;
 
   return (
-    <div
-      className="py-[100px] md:py-28 lg:py-32 xl:py-[150px] dark:bg-dark"
-    >
+    <div className="py-[100px] md:py-28 lg:py-32 xl:py-[150px] dark:bg-dark">
       {isLoading ? (
         <div className="text-center">Loading...</div>
       ) : (
@@ -40,7 +38,7 @@ export default function Services() {
           <div className="-mt-1">
             <Swiper
               breakpoints={breakpoints}
-              loop
+              loop={true}
               autoplay={{
                 delay: 2000,
               }}

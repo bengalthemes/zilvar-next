@@ -1,4 +1,5 @@
 import React from "react";
+import Input from "../ui/forms/input";
 
 export default function ContactModal() {
   return (
@@ -22,7 +23,8 @@ export default function ContactModal() {
                 className="flex flex-col lg:grid lg:grid-cols-2 gap-x-6 lg:gap-y-4 gap-y-1.5 md:gap-y-2"
                 id="contact_form"
               >
-                <div className="pb-0.5">
+                <Input />
+                {/* <div className="pb-0.5">
                   <div className="relative mb-1">
                     <input
                       className="h-11 rounded border border-gray-150 placeholder:tracking-widest placeholder:text-gray-600 text-sm text-black ltr:pl-14 rtl:pr-14 w-full pr-3 py-1.5 font-normal bg-white formControl dark:bg-gray-900 dark:border-gray-750 focus:border-black dark:focus:border-gray-300 dark:text-white dark:placeholder:text-gray-500"
@@ -35,7 +37,7 @@ export default function ContactModal() {
                       <em className="fa-solid fa-user"></em>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="pb-0.5">
                   <div className="relative mb-1">

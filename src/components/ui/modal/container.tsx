@@ -34,7 +34,7 @@ export default function ModalContainer() {
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed inset-0 z-50 w-full h-full p-4 overflow-x-hidden overflow-y-auto text-center sm:p-6 lg:p-8 xl:p-10 3xl:p-12"
+        className="fixed inset-0 z-50 flex items-center justify-center w-full h-full p-4 overflow-x-hidden overflow-y-auto text-center sm:p-6 lg:p-8 xl:p-10 3xl:p-12"
         onClose={closeModal}
       >
         <Transition.Child
@@ -78,7 +78,7 @@ export default function ModalContainer() {
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-105"
         >
-          <div className="relative z-50 inline-block w-full text-left align-middle">
+          <div className="relative z-50 inline-block align-middle">
             {view && renderModalContent(view)}
           </div>
         </Transition.Child>

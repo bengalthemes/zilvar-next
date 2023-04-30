@@ -1,4 +1,4 @@
-export default function BlogCard() {
+export default function PostCard() {
   return (
     <article className="rounded-md overflow-hidden relative min-h-[375px] bg-white-smoke dark:bg-dark-smoke group">
       {/* <div

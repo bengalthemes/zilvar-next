@@ -1,5 +1,6 @@
-import BlogCard from "./BlogCard";
+import BlogCard from "./PostCard";
 import NextPrevButton from "../ui/NextPrevButton";
+import AnchorLink from "../ui/AnchorLink";
 
 export default function Blog() {
   return (
@@ -43,9 +44,7 @@ export default function Blog() {
         </div>
 
         <div className="flex justify-center pt-10 md:pt-12 md:mt-1">
-          <a href="blog.html" className="btn btn-secondary">
-            View All Posts
-          </a>
+          <AnchorLink href='/blog'>View All Posts</AnchorLink>
         </div>
       </div>
     </section>

@@ -14,6 +14,42 @@ export default function AboutInformation({
           </span>
           {informationData?.name}
         </li>
+        <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
+          <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
+          Age
+          </span>
+          {informationData?.age}
+        </li>
+        <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
+          <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
+          E-Mail
+          </span>
+          {informationData?.email}
+        </li>
+        <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
+          <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
+          Phone
+          </span>
+          {informationData?.phone}
+        </li>
+        <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
+          <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
+          Skype
+          </span>
+          {informationData?.skype}
+        </li>
+        <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
+          <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
+          Website
+          </span>
+          {informationData?.website}
+        </li>
+        <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
+          <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
+          Freelance
+          </span>
+          {informationData?.freelanceStatus}
+        </li>
       </ul>
     </div>
   );

@@ -1,17 +1,10 @@
-import { useDrawer } from "@/components/drawer-views/DrawerContext";
-// import { UserIcon } from "@/components/icons/UserIcon";
-import Logo from "@/components/ui/Logo";
-import { useActiveScroll } from "@/utils/use-active-scroll";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+import { useDrawer } from '@/components/drawer-views/DrawerContext';
+import { FaUser } from 'react-icons/fa';
+import Logo from '@/components/ui/Logo';
+import { useActiveScroll } from '@/utils/use-active-scroll';
+import { Link } from 'react-scroll';
 
-import { useRef } from "react";
+import { useRef } from 'react';
 type DivElementRef = React.MutableRefObject<HTMLDivElement>;
 
 export default function Header() {
@@ -106,14 +99,15 @@ export default function Header() {
 
         <button
           className="aboutDrawerOpenBtn relative w-10 h-10 text-gray-800 !p-1 !text-lg bg-white border border-gray-100 rounded-full btn hover:bg-white-smoke hover:border-gray-100 active:bg-white-smoke active:border-gray-100 active:text-gray-600 before:absolute before:bg-black before:opacity-100 before:rounded-full after:absolute after:bg-black after:opacity-100 after:rounded-full before:right-0.5 before:top-0.5 before:w-1.5 before:h-1.5 after:right-0 after:top-0 after:w-2.5 after:h-2.5 after:animate-active-online 2ark:before:bg-white dark:after:bg-white"
-          onClick={() => openDrawer("ABOUT_VIEW")}
+          onClick={() => openDrawer('ABOUT_VIEW')}
         >
           {/* <UserIcon className="w-[18px] h-[18px]" /> */}
+          <FaUser />
         </button>
 
         <button
           className="block p-3 -ml-3 md:hidden btn group -order-1"
-          onClick={() => openDrawer("MOBILE_MENU", true)}
+          onClick={() => openDrawer('MOBILE_MENU', true)}
         >
           <span className="flex flex-col items-start justify-center w-7 gap-y-1.5">
             <em className="h-0.5 transition-all flex rounded-2xl bg-gray-900 w-1/2 group-hover:w-full"></em>

@@ -1,17 +1,10 @@
-import Blog from "@/components/blog/Blog";
-import BlogCard from "@/components/blog/PostCard";
-import Contact from "@/components/contact/Contact";
-import Hero from "@/components/hero/Hero";
-import Portfolios from "@/components/portfolio/Portfolios";
-import Services from "@/components/services/Services";
-import Testimonials from "@/components/testimonial/Testimonials";
-import PageHeader from "@/components/ui/PageHeader";
-import SEO from "@/components/ui/SEO";
-import Layout from "@/layouts/_layout";
-import { getPosts } from "@/utils/mdx-utils";
-import { GetStaticProps } from "next/types";
-import React from "react";
-import { Element } from "react-scroll";
+import BlogCard from '@/components/blog/PostCard';
+import PageHeader from '@/components/ui/PageHeader';
+import SEO from '@/components/ui/SEO';
+import Layout from '@/layouts/_layout';
+import { getPosts } from '@/utils/mdx-utils';
+import { GetStaticProps } from 'next/types';
+import React from 'react';
 
 export default function BlogPage({ posts }: any) {
   return (
@@ -24,15 +17,15 @@ export default function BlogPage({ posts }: any) {
           {posts.map((post) => (
             <li
               key={post.filePath}
-              className="md:first:rounded-t-lg md:last:rounded-b-lg backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 border-b-0 last:border-b hover:border-b hovered-sibling:border-t-0"
+              className="transition bg-white border border-b-0 border-gray-800 md:first:rounded-t-lg md:last:rounded-b-lg backdrop-blur-lg dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 dark:border-white border-opacity-10 dark:border-opacity-10 last:border-b hover:border-b hovered-sibling:border-t-0"
             >
               <div
                 // as={`/posts/${post.filePath.replace(/\.mdx?$/, '')}`}
                 // href={`/posts/[slug]`}
               >
-                <a className="py-6 lg:py-10 px-6 lg:px-16 block focus:outline-none focus:ring-4">
+                <a className="block px-6 py-6 lg:py-10 lg:px-16 focus:outline-none focus:ring-4">
                   {post.data.date && (
-                    <p className="uppercase mb-3 font-bold opacity-60">
+                    <p className="mb-3 font-bold uppercase opacity-60">
                       {post.data.date}
                     </p>
                   )}
@@ -55,7 +48,10 @@ export default function BlogPage({ posts }: any) {
             <div className="grid gap-7 2xl:grid-cols-3 md:grid-cols-2 2xl:gap-10">
               {posts.map((post) => (
                 <div className="relative" key={post.filePath}>
-                  <BlogCard />
+                  <BlogCard
+                    post={post.data}
+                    filePath={post.filePath.replace('.mdx', '')}
+                  />
                 </div>
               ))}
             </div>

@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import Breadcrumb from './Breadcrumb';
+import { FaSearch } from 'react-icons/fa';
 
 export default function PageHeader() {
   return (
@@ -8,29 +10,7 @@ export default function PageHeader() {
           <h2 className="font-bold text-[32px] text-black leading-tight mb-2 tracking-[4px] md:text-[40px] md:font-extrabold xl:text-5xl">
             MY <span className="text-stroke-1">BLOG</span>
           </h2>
-          <nav aria-label="breadcrumb" className="mt-2.5 xl:mt-4 breadcrumb">
-            <ol className="text-[15px] font-normal justify-center flex items-center flex-wrap text-gray-700 dark:text-gray-300">
-              <li className="relative flex ltr:before:content-['\f054'] before:flex before:items-center before:opacity-80 dark:before:text-gray-300 before:text-gray-700 before:font-black rtl:pr-3 rtl:first:pr-0 ltr:pl-3 ltr:first:pl-0 ltr:first:before:hidden before:text-xs ltr:before:pr-3 rtl:before:pl-3 before:font-awesome rtl:before:content-['\f053'] rtl:first:before:hidden">
-                <a
-                  href="index.html"
-                  className="flex items-center transition-opacity opacity-80 hover:opacity-100"
-                >
-                  <img
-                    src="assets/images/icon/home.svg"
-                    alt="light"
-                    className="w-[18px] ltr:mr-1 rtl:ml-1 dark:invert"
-                  />
-                  Home
-                </a>
-              </li>
-              <li
-                className="relative flex ltr:before:content-['\f054'] before:flex before:items-center before:opacity-80 dark:before:text-gray-300 before:text-gray-700 before:font-black rtl:pr-3 rtl:first:pr-0 ltr:pl-3 ltr:first:pl-0 ltr:first:before:hidden before:text-xs ltr:before:pr-3 rtl:before:pl-3 before:font-awesome rtl:before:content-['\f053'] rtl:first:before:hidden active"
-                aria-current="page"
-              >
-                Library
-              </li>
-            </ol>
-          </nav>
+          <Breadcrumb />
           <form className="w-full max-w-md mx-auto mt-9 md:mt-11 md:px-3.5">
             <div className="relative">
               <label
@@ -38,6 +18,7 @@ export default function PageHeader() {
                 className="absolute top-0 flex items-center justify-center h-full text-white transition-all bg-black cursor-pointer ltr:right-0 rtl:left-0 dark:bg-white dark:text-black hover:bg-gray-900 w-14 hover:bg-opacity-80 dark:hover:bg-opacity-90"
               >
                 <i className="fa-solid fa-magnifying-glass"></i>
+                <FaSearch />
               </label>
               <input
                 id="search"

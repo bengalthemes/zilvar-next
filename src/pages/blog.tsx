@@ -115,6 +115,5 @@ export default function BlogPage({ posts }: any) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = getPosts();
-  console.log(posts, 'postss')
   return { props: { posts } };
 };

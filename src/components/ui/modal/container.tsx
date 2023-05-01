@@ -4,15 +4,16 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useModal, MODAL_VIEW } from "@/components/ui/modal/context";
 import { Dialog, Transition } from "@headlessui/react";
-// dynamic imports
+
 const ContactModal = dynamic(() => import("@/components/contact/ContactModal"));
+const PortfolioModal = dynamic(() => import("@/components/portfolio/PortfolioModal"));
 
 function renderModalContent(view: MODAL_VIEW | string) {
   switch (view) {
     case "CONTACT_MODAL":
       return <ContactModal />;
     case "PORTFOLIO_MODAL":
-      return <div />;
+      return <PortfolioModal />;
     default:
       return null;
   }
@@ -34,7 +35,7 @@ export default function ModalContainer() {
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed inset-0 z-50 flex items-center justify-center w-full h-full p-4 overflow-x-hidden overflow-y-auto text-center sm:p-6 lg:p-8 xl:p-10 3xl:p-12"
+        className="fixed inset-0 z-50 flex items-center justify-center w-full h-full p-4 overflow-x-hidden overflow-y-auto sm:p-6 lg:p-8 xl:p-10 3xl:p-12"
         onClose={closeModal}
       >
         <Transition.Child

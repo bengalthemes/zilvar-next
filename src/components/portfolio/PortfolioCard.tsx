@@ -1,17 +1,19 @@
 import { Portfolio } from "@/types";
-import Link from "../ui/AnchorLink";
 import Image from "next/image";
 import PortfolioTypeIconText from "./portfolio-icon-text";
 import classNames from "classnames";
+import { useModal } from "../ui/modal/context";
 
 export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
   const { title, image, type, category, categoryFilter } = portfolio;
+  const { openModal } = useModal();
   return (
     <div
       className={classNames(
         "w-full px-2 md:w-1/2 lg:w-1/3 md:px-4 xl:px-5 2xl:px-7 filterItem modalPortfolioToggle",
         categoryFilter
       )}
+      onClick={() => openModal("PORTFOLIO_MODAL")}
     >
       <div className="inline-flex flex-col mb-6 xl:mb-8 group">
         <div className="relative inline-block overflow-hidden">

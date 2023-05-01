@@ -1,9 +1,9 @@
 enum PortfolioType {
-  thumbnail = "thumbnail",
-  link = "link",
-  gallery = "gallery",
-  video = "video",
-  slide = "slide",
+  thumbnail = 'thumbnail',
+  link = 'link',
+  gallery = 'gallery',
+  video = 'video',
+  slide = 'slide',
 }
 export type Attachment = {
   id: string | number;
@@ -92,4 +92,21 @@ export interface Tag {
 export interface ItemLabel {
   id: string | number;
   label: string;
+}
+
+export interface User {
+  name: string;
+  avatar: string;
+  url?: string;
+}
+
+export interface Post {
+  title: string;
+  filePath: string;
+  excerpt?: string;
+  coverImage?: string;
+  author?: User;
+  category: string;
+  content?: string;
+  date?: string;
 }

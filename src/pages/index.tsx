@@ -1,13 +1,13 @@
-import Blog from "@/components/blog/Blog";
-import Contact from "@/components/contact/Contact";
-import Hero from "@/components/hero/Hero";
-import Portfolios from "@/components/portfolio/Portfolios";
-import Services from "@/components/services/Services";
-import Testimonials from "@/components/testimonial/Testimonials";
-import SEO from "@/components/ui/SEO";
-import Layout from "@/layouts/_layout";
-import React from "react";
-import { Element } from "react-scroll";
+import Blog from '@/components/blog/Blog';
+import Contact from '@/components/contact/Contact';
+import Hero from '@/components/hero/Hero';
+import Portfolios from '@/components/portfolio/Portfolios';
+import Services from '@/components/services/Services';
+import Testimonials from '@/components/testimonial/Testimonials';
+import SEO from '@/components/ui/SEO';
+import Layout from '@/layouts/_layout';
+import React from 'react';
+import { Element } from 'react-scroll';
 
 export default function Home() {
   return (
@@ -24,9 +24,9 @@ export default function Home() {
         <Element name="client">
           <Testimonials />
         </Element>
-        <Element name="blog">
+        {/* <Element name="blog">
           <Blog />
-        </Element>
+        </Element> */}
         <Element name="contact">
           <Contact />
         </Element>

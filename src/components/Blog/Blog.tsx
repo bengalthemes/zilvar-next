@@ -1,13 +1,10 @@
-import BlogCard from "./PostCard";
-import NextPrevButton from "../ui/NextPrevButton";
-import AnchorLink from "../ui/AnchorLink";
+import BlogCard from './PostCard';
+import NextPrevButton from '../ui/NextPrevButton';
+import AnchorLink from '../ui/AnchorLink';
 
 export default function Blog() {
   return (
-    <section
-      className="py-[100px] md:py-28 lg:py-32 xl:py-[150px] dark:bg-dark"
-      
-    >
+    <section className="py-[100px] md:py-28 lg:py-32 xl:py-[150px] dark:bg-dark">
       <div className="container">
         <div className="mb-12 md:flex md:justify-between md:items-end lg:mb-14 xl:mb-[70px]">
           <div className="relative mb-8 -mt-1 md:mb-0">
@@ -21,7 +18,11 @@ export default function Blog() {
               LATEST <span className="text-stroke-1">POST.</span>
             </h2>
           </div>
-          <NextPrevButton nextActiveId="" prevActiveId="" className="ltr:md:pl-5 rtl:md:pr-5 md:pb-2.5" />
+          <NextPrevButton
+            nextActiveId=""
+            prevActiveId=""
+            className="ltr:md:pl-5 rtl:md:pr-5 md:pb-2.5"
+          />
         </div>
         <div className="swiper blog-posts-carousel">
           <div className="swiper-wrapper">
@@ -44,7 +45,12 @@ export default function Blog() {
         </div>
 
         <div className="flex justify-center pt-10 md:pt-12 md:mt-1">
-          <AnchorLink href='/blog'>View All Posts</AnchorLink>
+          <AnchorLink
+            href="/blog"
+            className="bg-black font-semibold text-white rounded-md tracking-[1px] px-5 py-3 leading-[1.5em] hover:bg-gray-900 dark:bg-white dark:text-black hover:dark:bg-opacity-80 md:py-4 md:px-8"
+          >
+            View All Posts
+          </AnchorLink>
         </div>
       </div>
     </section>

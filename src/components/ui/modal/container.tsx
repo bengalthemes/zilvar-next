@@ -35,7 +35,7 @@ export default function ModalContainer() {
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed inset-0 z-50 flex items-center justify-center w-full h-full p-4 overflow-x-hidden overflow-y-auto sm:p-6 lg:p-8 xl:p-10 3xl:p-12"
+        className="fixed inset-0 z-50 flex items-center justify-center w-full h-full p-4 overflow-x-hidden overflow-y-auto"
         onClose={closeModal}
       >
         <Transition.Child

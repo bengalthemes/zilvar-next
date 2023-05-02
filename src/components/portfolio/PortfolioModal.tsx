@@ -1,6 +1,6 @@
 export default function PortfolioModal() {
   return (
-    <div className="max-w-[1200px]">
+    <div className="w-[1200px]">
       <div className="relative flex flex-col w-full bg-white rounded-md dark:bg-gray-900">
         <div className="relative p-4 2xl:p-12 xl:p-8 lg:p-7 md:p-5">
           <button

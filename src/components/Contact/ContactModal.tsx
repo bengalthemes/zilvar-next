@@ -1,9 +1,9 @@
-import React from "react";
-import Input from "../ui/forms/input";
+import React from 'react';
+import Input from '../ui/forms/input';
 
 export default function ContactModal() {
   return (
-    <div className="max-w-[1072px]">
+    <div className="w-[1072px]">
       <div className="relative w-full bg-white rounded-md dark:bg-gray-900">
         <div className="flex items-center justify-between p-4 border-b border-gray-150 dark:border-gray-750 md:px-6 md:py-5 lg:py-[22px] lg:px-8">
           <h2 className="tracking-[1px] word-spacing-2 leading-snug font-bold text-2xl md:text-3xl">

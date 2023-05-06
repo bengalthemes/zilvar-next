@@ -74,7 +74,10 @@ export interface Portfolio {
   type: PortfolioType;
   image: Attachment;
   tags?: Tag[];
-  previewLink?: string;
+  previewLink?: {
+    label?: string,
+    URL?: string
+  };
   publishedData?: string;
   clientName: string;
 }

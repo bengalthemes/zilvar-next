@@ -1,85 +1,95 @@
+import { Portfolio } from "@/types";
+import Image from "next/image";
+import AnchorLink from "../ui/AnchorLink";
+import { useModal } from "../ui/modal/context";
+import { HiXMark } from "react-icons/hi2";
+
 export default function PortfolioModal() {
+  const { data, closeModal } = useModal();
+  const {
+    title,
+    image,
+    type,
+    category,
+    clientName,
+    publishedDate,
+    tags,
+    previewLink,
+  } = data;
   return (
     <div className="w-[1200px]">
       <div className="relative flex flex-col w-full bg-white rounded-md dark:bg-gray-900">
         <div className="relative p-4 2xl:p-12 xl:p-8 lg:p-7 md:p-5">
           <button
             type="button"
-            className="absolute z-50 flex items-center justify-center text-xl w-9 h-9 ltr:right-4 rtl:left-4 top-4 ltr:md:right-1 rtl:md:left-1 md:top-1 ltr:lg:right-4 rtl:lg:left-4 lg:top-4 ltr:xl:right-6 rtl:xl:left-6 xl:top-5 md:text-2xl modalPortfolioToggle hover:text-gray-700 dark:text-white dark:text-opacity-50 dark:hover:text-opacity-90"
+            className="absolute z-50 flex items-center justify-center text-xl w-9 h-9 ltr:right-4 rtl:left-4 top-4 ltr:md:right-1 rtl:md:left-1 md:top-1 ltr:lg:right-4 rtl:lg:left-4 lg:top-4 ltr:xl:right-6 rtl:xl:left-6 xl:top-5 md:text-2xl  hover:text-gray-700 dark:text-white dark:text-opacity-50 dark:hover:text-opacity-90"
+            onClick={closeModal}
           >
-            <em className="fa-solid fa-xmark"></em>
+            <HiXMark />
           </button>
           <div className="flex flex-col md:flex-row">
             <div className="flex md:w-[58.5%] lg:w-[56%]">
-              <div className="inline-flex overflow-hidden rounded-md bg-slate-300">
-                <img
-                  src="assets/images/portfolio/portfolio-1.jpg"
-                  alt="Portfolio"
+              <div className="inline-flex overflow-hidden rounded-md bg-slate-300 relative w-full aspect-[1/1.16]">
+                <Image
+                  src={image.thumbnail}
+                  alt={title}
+                  fill
+                  className="object-cover hover:opacity-90 transition-opacity"
                 />
               </div>
             </div>
             <div className="grow pt-9 md:pt-0 ltr:md:pl-8 ltr:lg:pl-10 ltr:xl:pl-12 rtl:md:pr-8 rtl:lg:pr-10 rtl:xl:pr-12">
               <h2 className="text-xl mb-1 ltr:md:pr-5 rtl:md:pl-5 md:text-[22px] lg:text-[28px] lg:mb-1.5 xl:text-[32px] font-semibold leading-tight">
-                Fresh Orange Juice
+                {title}
               </h2>
               <div className="italic text-gray-600 text-sm md:text-[15px] lg:text-base pt-px dark:text-gray-500">
-                Graphics Design
+                {category}
               </div>
               <ul className="text-gray-800 dark:text-gray-200 text-sm pt-10 md:text-[15px] md:pt-8 lg:text-base lg:pt-9 xl:pt-12">
-                <li className="font-medium leading-relaxed mb-7 md:mb-6 lg:mb-8 xl:mb-10 pb-0.5">
-                  <span className="block pb-0.5 lg:pb-1 text-sm text-gray-500 uppercase dark:text-gray-400">
-                    CLIENT
-                  </span>
-                  Ghaly Corporation
-                </li>
-                <li className="font-medium leading-relaxed mb-7 md:mb-6 lg:mb-8 xl:mb-10 pb-0.5">
-                  <span className="block pb-0.5 lg:pb-1 text-sm text-gray-500 uppercase dark:text-gray-400">
-                    PUBLISHED
-                  </span>
-                  January 29, 2022
-                </li>
-                <li className="font-medium leading-relaxed mb-7 md:mb-6 lg:mb-8 xl:mb-10 pb-0.5">
-                  <span className="block pb-0.5 lg:pb-1 text-sm text-gray-500 uppercase dark:text-gray-400">
-                    Preview
-                  </span>
-                  <a
-                    href="https://themeforest.net/user/bengalthemes/portfolio"
-                    className="hover:text-black dark:hover:text-white"
-                  >
-                    https://themeforest.net
-                  </a>
-                </li>
-                <li className="font-medium leading-relaxed mb-7 md:mb-6 lg:mb-8 xl:mb-10 pb-0.5">
-                  <span className="block pb-0.5 lg:pb-1 text-sm text-gray-500 uppercase dark:text-gray-400">
-                    Tags
-                  </span>
-                  <div className="flex flex-wrap">
-                    <a
-                      className="text-[15px] hover:text-black dark:hover:text-white inline-block after:content-[','] last:after:content-[''] after:pr-2 last:after:pr-0 after:relative after:-right-0.5"
-                      href="#"
+                {clientName && (
+                  <li className="font-medium leading-relaxed mb-7 md:mb-6 lg:mb-8 xl:mb-10 pb-0.5">
+                    <span className="block pb-0.5 lg:pb-1 text-sm text-gray-500 uppercase dark:text-gray-400">
+                      CLIENT
+                    </span>
+                    {clientName}
+                  </li>
+                )}
+                {publishedDate && (
+                  <li className="font-medium leading-relaxed mb-7 md:mb-6 lg:mb-8 xl:mb-10 pb-0.5">
+                    <span className="block pb-0.5 lg:pb-1 text-sm text-gray-500 uppercase dark:text-gray-400">
+                      PUBLISHED
+                    </span>
+                    {publishedDate}
+                  </li>
+                )}
+                {previewLink?.label && (
+                  <li className="font-medium leading-relaxed mb-7 md:mb-6 lg:mb-8 xl:mb-10 pb-0.5">
+                    <span className="block pb-0.5 lg:pb-1 text-sm text-gray-500 uppercase dark:text-gray-400">
+                      Preview
+                    </span>
+                    <AnchorLink
+                      href={previewLink.URL ? previewLink.URL : "#"}
+                      className="hover:text-black dark:hover:text-white"
                     >
-                      Fresh
-                    </a>
-                    <a
-                      className="text-[15px] hover:text-black dark:hover:text-white inline-block after:content-[','] last:after:content-[''] after:pr-2 last:after:pr-0 after:relative after:-right-0.5"
-                      href="#"
-                    >
-                      Design
-                    </a>
-                    <a
-                      className="text-[15px] hover:text-black dark:hover:text-white inline-block after:content-[','] last:after:content-[''] after:pr-2 last:after:pr-0 after:relative after:-right-0.5"
-                      href="#"
-                    >
-                      Graphic
-                    </a>
-                    <a
-                      className="text-[15px] hover:text-black dark:hover:text-white inline-block after:content-[','] last:after:content-[''] after:pr-2 last:after:pr-0 after:relative after:-right-0.5"
-                      href="#"
-                    >
-                      Orange
-                    </a>
-                  </div>
-                </li>
+                      {previewLink.label}
+                    </AnchorLink>
+                  </li>
+                )}
+
+                {tags?.length > 0 && (
+                  <li className="font-medium leading-relaxed mb-7 md:mb-6 lg:mb-8 xl:mb-10 pb-0.5">
+                    <span className="block pb-0.5 lg:pb-1 text-sm text-gray-500 uppercase dark:text-gray-400">
+                      Tags
+                    </span>
+                    <div className="flex flex-wrap">
+                      {tags.map((tag: string) => (
+                        <div className="text-[15px] hover:text-black dark:hover:text-white inline-block after:content-[','] last:after:content-[''] after:pr-2 last:after:pr-0 after:relative after:-right-0.5 cursor-pointer">
+                          {tag}
+                        </div>
+                      ))}
+                    </div>
+                  </li>
+                )}
                 <li className="relative pt-9 mt-9 lg:pt-12 lg:mt-12 xl:mt-[70px] xl:pt-[74px] before:absolute before:top-0 before:z-10 before:w-[70px] before:h-px before:bg-black font-medium leading-relaxed dark:before:bg-white">
                   <span className="block pb-0.5 lg:pb-1 text-sm text-gray-500 uppercase dark:text-gray-400">
                     Share

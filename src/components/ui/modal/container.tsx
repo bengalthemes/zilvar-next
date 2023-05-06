@@ -74,8 +74,8 @@ export default function ModalContainer() {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-110"
           >
-            <div className="text-start relative z-50 inline-block min-h-screen w-full transform overflow-hidden align-middle transition-all min-h-[auto] w-auto">
-              <div className="relative flex min-h-screen items-center overflow-hidden block min-h-[auto] justify-center">
+            <div className="text-start relative z-50 inline-block min-h-screen w-full transform overflow-hidden align-middle transition-all ">
+              <div className="relative flex min-h-screen items-center overflow-hidden justify-center">
                 {view && renderModalContent(view)}
               </div>
             </div>

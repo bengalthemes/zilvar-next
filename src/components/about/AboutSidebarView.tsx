@@ -17,10 +17,9 @@ export default function AboutSidebarView() {
           About <span className="text-stroke-1 tracking-[0.05em]">Me</span>
         </h3>
         <button
-          className="btn drawerCloseBtn text-gray-900 hover:text-black dark:text-gray-400 dark:hover:text-white -mt-1 text-xl px-5 py-2.5 md:py-4 md:px-7"
+          className="btn text-gray-900 hover:text-black dark:text-gray-400 dark:hover:text-white -mt-1 text-xl px-5 py-2.5 md:py-4 md:px-7"
           onClick={closeDrawer}
         >
-          <em className="fa-solid fa-xmark"></em>
           <HiXMark />
         </button>
       </div>

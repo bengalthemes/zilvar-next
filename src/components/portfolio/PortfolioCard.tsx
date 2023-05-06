@@ -13,7 +13,7 @@ export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
         "w-full px-2 md:w-1/2 lg:w-1/3 md:px-4 xl:px-5 2xl:px-7 filterItem modalPortfolioToggle",
         categoryFilter
       )}
-      onClick={() => openModal("PORTFOLIO_MODAL")}
+      onClick={() => openModal("PORTFOLIO_MODAL", portfolio)}
     >
       <div className="inline-flex flex-col mb-6 xl:mb-8 group">
         <div className="relative inline-block overflow-hidden">

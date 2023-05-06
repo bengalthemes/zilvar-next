@@ -12,7 +12,14 @@
       "height": 465,
       "width": 400
     },
-    "type": "image"
+    "type": "image",
+    "clientName": "Ghaly Corporation",
+    "publishedDate": "January 29, 2022",
+    "previewLink": {
+      "label":"https://themeforest.net",
+      "URL": "https://themeforest.net/user/bengalthemes/portfolio"
+    },
+    "tags": ["Fresh", "Design", "Graphic", "Orange"]
   },
   {
     "id": 2,

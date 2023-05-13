@@ -1,11 +1,11 @@
-import { useDrawer } from "../drawer-views/DrawerContext";
-import { HiXMark } from "react-icons/hi2";
-import AboutInformation from "./AboutInformation";
-import { useAboutInformationQuery } from "@/rest-client/get-about-information";
-import Skills from "./Skills";
-import Knowledge from "./Knowledge";
-import Interests from "./Interests";
-import Scrollbar from "../ui/Scrollbar";
+import { useDrawer } from '../ui/drawer-views/DrawerContext';
+import { HiXMark } from 'react-icons/hi2';
+import AboutInformation from './AboutInformation';
+import { useAboutInformationQuery } from '@/rest-client/get-about-information';
+import Skills from './Skills';
+import Knowledge from './Knowledge';
+import Interests from './Interests';
+import Scrollbar from '../ui/Scrollbar';
 
 export default function AboutSidebarView() {
   const { closeDrawer } = useDrawer();

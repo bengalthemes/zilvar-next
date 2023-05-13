@@ -75,8 +75,8 @@ export interface Portfolio {
   image: Attachment;
   tags?: Tag[];
   previewLink?: {
-    label?: string,
-    URL?: string
+    label?: string;
+    URL?: string;
   };
   publishedData?: string;
   clientName: string;

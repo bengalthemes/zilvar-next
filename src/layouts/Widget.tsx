@@ -1,6 +1,8 @@
-import { siteSettings } from "@/settings/site-settings";
-import Link from "next/link";
-import SocialProfile from "./SocilaProfile";
+import { siteSettings } from '@/settings/site-settings';
+import Link from 'next/link';
+import SocialProfile from '@/layouts/SocialProfile';
+import Image from 'next/image';
+import AnchorLink from '@/components/ui/AnchorLink';
 
 function Widget() {
   const { author, footerLogo } = siteSettings;
@@ -13,7 +15,7 @@ function Widget() {
               href={footerLogo.href}
               className="relative inline-block mb-1 md:mb-2.5"
             >
-              <img
+              <Image
                 width={footerLogo.width}
                 height={footerLogo.height}
                 src={footerLogo.url}
@@ -21,24 +23,29 @@ function Widget() {
               />
             </Link>
           </div>
+
           {/* Widget Address */}
           <div
             className="flex-shrink-0 pt-10 pl-4 pr-4 lg:w-1/4 md:pt-12 md:w-1/2 text-sm leading-[1.85em]"
             dangerouslySetInnerHTML={{
               __html: author.address,
             }}
-          ></div>
+          />
+
+          {/* Widget Information */}
           <div className="flex-shrink-0 pt-10 pl-4 pr-4 lg:w-1/4 md:pt-12 md:w-1/2 widget-contact-info">
             <p className="text-sm leading-[1.85em]">
-              <a
-                href="mailto:zilbardemo@demo.com"
+              <AnchorLink
+                href={`mailto:${author.email}`}
                 className="transition-opacity hover:opacity-80"
               >
-                zilbardemo@demo.com
-              </a>
+                {author.email}
+              </AnchorLink>
             </p>
-            <p className="text-sm leading-[1.85em]">+011 1235 6542</p>
+            <p className="text-sm leading-[1.85em]">{author.phone}</p>
           </div>
+
+          {/* Widget Social Profile */}
           <SocialProfile className="flex-shrink-0 pt-10 pl-4 pr-4 lg:w-1/4 md:pt-12 md:w-1/2 -mx-1 mt-1.5 -mb-1 lg:-m-0.5 lg:text-right" />
         </div>
       </div>

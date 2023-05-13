@@ -1,4 +1,5 @@
-import { siteSettings } from "@/settings/site-settings";
+import AnchorLink from '@/components/ui/AnchorLink';
+import { siteSettings } from '@/settings/site-settings';
 
 export default function Copyright() {
   const { name, author } = siteSettings;
@@ -6,11 +7,15 @@ export default function Copyright() {
   return (
     <div className="pt-8 border-t border-gray-light lg:pt-0 lg:border-t-0">
       <div className="container">
-        <div className="text-xs font-medium leading-loose tracking-widest text-center text-white">
-          © Copyright {currenYear} {name}. Template by{" "}
-          <a href={author.websiteUrl} className="hover:opacity-80">
+        <div className="text-xs font-normal leading-loose tracking-widest text-center text-white">
+          © Copyright {currenYear} {name}. Template by{' '}
+          <AnchorLink
+            href={author.websiteUrl}
+            className="font-semibold hover:opacity-80"
+            target="_blank"
+          >
             {author.name}
-          </a>
+          </AnchorLink>
         </div>
       </div>
     </div>

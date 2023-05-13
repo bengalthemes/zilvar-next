@@ -1,7 +1,7 @@
 import { Portfolio } from '@/types';
 import Image from 'next/image';
 import AnchorLink from '../ui/AnchorLink';
-import { useModal } from '../ui/modal/context';
+import { useModal } from '../ui/modal/ModalContext';
 import { HiXMark } from 'react-icons/hi2';
 
 export default function PortfolioModal() {
@@ -83,8 +83,11 @@ export default function PortfolioModal() {
                       Tags
                     </span>
                     <div className="flex flex-wrap">
-                      {tags.map((tag: string) => (
-                        <div className="text-[15px] hover:text-black dark:hover:text-white inline-block after:content-[','] last:after:content-[''] after:pr-2 last:after:pr-0 after:relative after:-right-0.5 cursor-pointer">
+                      {tags.map((tag: string, idx: number) => (
+                        <div
+                          key={idx}
+                          className="text-[15px] hover:text-black dark:hover:text-white inline-block after:content-[','] last:after:content-[''] after:pr-2 last:after:pr-0 after:relative after:-right-0.5 cursor-pointer"
+                        >
                           {tag}
                         </div>
                       ))}

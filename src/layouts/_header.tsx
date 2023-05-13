@@ -1,4 +1,4 @@
-import { useDrawer } from '@/components/drawer-views/DrawerContext';
+import { useDrawer } from '@/components/ui/drawer-views/DrawerContext';
 import { FaUser } from 'react-icons/fa';
 import Logo from '@/components/ui/Logo';
 import { useActiveScroll } from '@/utils/use-active-scroll';

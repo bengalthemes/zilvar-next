@@ -10,22 +10,22 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.13",
-    "@next/font": "13.1.6",
-    "@types/node": "18.14.0",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "axios": "^1.3.4",
+    "@headlessui/react": "^1.7.14",
+    "@next/font": "13.4.2",
+    "@types/node": "20.1.3",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "axios": "^1.4.0",
     "classnames": "^2.3.2",
-    "eslint": "8.34.0",
-    "eslint-config-next": "13.1.6",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.2",
     "gray-matter": "^4.0.3",
     "isotope-layout": "^3.0.6",
-    "jotai": "^2.0.3",
-    "next": "13.1.6",
+    "jotai": "^2.1.0",
+    "next": "13.4.2",
     "next-mdx-remote": "^4.4.1",
     "next-remote-watch": "^2.0.0",
-    "next-seo": "^5.15.0",
+    "next-seo": "^6.0.0",
     "overlayscrollbars": "^2.1.1",
     "overlayscrollbars-react": "^0.5.0",
     "react": "18.2.0",
@@ -34,16 +34,16 @@
     "react-query": "^3.39.3",
     "react-scroll": "^1.8.9",
     "react-share": "^4.4.1",
-    "swiper": "^9.1.0",
-    "typescript": "4.9.5"
+    "swiper": "^9.3.1",
+    "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.9",
     "@types/isotope-layout": "^3.0.9",
-    "@types/react-scroll": "^1.8.6",
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7"
+    "@types/react-scroll": "^1.8.7",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2"
   }
 }

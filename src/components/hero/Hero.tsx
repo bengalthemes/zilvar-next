@@ -1,17 +1,17 @@
-import SubHeading from "@/components/ui/SubHeading";
-import Image from "next/image";
-import { useDrawer } from "@/components/drawer-views/DrawerContext";
-import { Link } from "react-scroll";
-import HeroWaveShape from "./HeroWaveShape";
-import { FaChevronDown } from "react-icons/fa";
+import SubHeading from '@/components/ui/SubHeading';
+import Image from 'next/image';
+import { useDrawer } from '@/components/ui/drawer-views/DrawerContext';
+import { Link } from 'react-scroll';
+import HeroWaveShape from './HeroWaveShape';
+import { FaChevronDown } from 'react-icons/fa';
 
 const heroData = {
-  heroThumb: "/images/hero.jpg",
-  firstName: "JESSY",
-  lastName: "DOE",
-  welcomeText: "HELLO!",
-  designation: "Professional Creative Web Developer",
-  aboutButtonText: "ABOUT ME",
+  heroThumb: '/images/hero.jpg',
+  firstName: 'JESSY',
+  lastName: 'DOE',
+  welcomeText: 'HELLO!',
+  designation: 'Professional Creative Web Developer',
+  aboutButtonText: 'ABOUT ME',
 };
 
 export default function Hero() {
@@ -35,14 +35,14 @@ export default function Hero() {
         <div className="relative z-20 pt-16 xl:pt-8 lg:w-7/12 xl:w-8/12">
           <SubHeading title={heroData.welcomeText} variant="medium" />
           <h1 className="font-extrabold text-black dark:text-white tracking-[2px] !leading-[1.15em] mt-7 mb-2 text-[42px] sm:text-5xl md:text-[56px] xl:mt-9 xl:mb-2.5 2xl:mb-3 xl:text-[68px] 2xl:text-[76px]">
-            I'M <span className="text-stroke-1">{heroData.firstName}</span>{" "}
+            I'M <span className="text-stroke-1">{heroData.firstName}</span>{' '}
             {heroData.lastName}
           </h1>
           <div className="mb-8 text-sm italic font-medium !leading-relaxed text-gray-700 dark:text-gray-300 capitalize md:text-base md:mb-10">
             {heroData.designation}
           </div>
           <button
-            onClick={() => openDrawer("ABOUT_VIEW")}
+            onClick={() => openDrawer('ABOUT_VIEW')}
             className="btn btn-primary about-drawer-open-btn before:bg-white md:before:bg-gray-100"
           >
             <span>{heroData.aboutButtonText}</span>

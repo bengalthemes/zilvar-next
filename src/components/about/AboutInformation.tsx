@@ -1,4 +1,5 @@
-import { Information } from "@/types";
+import { Information } from '@/types';
+import AnchorLink from '../ui/AnchorLink';
 
 export default function AboutInformation({
   informationData,
@@ -16,39 +17,56 @@ export default function AboutInformation({
         </li>
         <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
           <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
-          Age
+            Age
           </span>
           {informationData?.age}
         </li>
         <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
           <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
-          E-Mail
+            E-Mail
           </span>
-          {informationData?.email}
+          <AnchorLink
+            href="mailto:demodemo@gmail.com"
+            className="hover:text-black dark:hover:text-white"
+          >
+            {informationData?.email}
+          </AnchorLink>
         </li>
         <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
           <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
-          Phone
+            Phone
           </span>
           {informationData?.phone}
         </li>
         <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
           <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
-          Skype
+            Skype
           </span>
-          {informationData?.skype}
+          <AnchorLink
+            href="/"
+            className="hover:text-black dark:hover:text-white"
+          >
+            {informationData?.skype}
+          </AnchorLink>
         </li>
         <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
           <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
-          Website
+            Website
           </span>
-          {informationData?.website}
+          <AnchorLink
+            href="https://themeforest.net/user/bengalthemes/portfolio"
+            className="hover:text-black dark:hover:text-white"
+          >
+            {informationData?.website}
+          </AnchorLink>
         </li>
         <li className="flex items-start justify-between mb-4 pb-0.5 last:pb-0 last:mb-0">
           <span className="font-medium text-black dark:text-white after:tracking-[0.22em] ltr:after:ml-1 rtl:after:mr-1 after:content-['...'] shrink-0 rtl:ml-2 ltr:mr-2">
-          Freelance
+            Freelance
           </span>
-          {informationData?.freelanceStatus}
+          <span className="text-black dark:text-white">
+            {informationData?.freelanceStatus}
+          </span>
         </li>
       </ul>
     </div>

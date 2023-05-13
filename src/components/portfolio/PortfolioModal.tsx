@@ -1,8 +1,8 @@
-import { Portfolio } from "@/types";
-import Image from "next/image";
-import AnchorLink from "../ui/AnchorLink";
-import { useModal } from "../ui/modal/context";
-import { HiXMark } from "react-icons/hi2";
+import { Portfolio } from '@/types';
+import Image from 'next/image';
+import AnchorLink from '../ui/AnchorLink';
+import { useModal } from '../ui/modal/context';
+import { HiXMark } from 'react-icons/hi2';
 
 export default function PortfolioModal() {
   const { data, closeModal } = useModal();
@@ -14,6 +14,7 @@ export default function PortfolioModal() {
     clientName,
     publishedDate,
     tags,
+
     previewLink,
   } = data;
   return (
@@ -22,7 +23,7 @@ export default function PortfolioModal() {
         <div className="relative p-4 2xl:p-12 xl:p-8 lg:p-7 md:p-5">
           <button
             type="button"
-            className="absolute z-50 flex items-center justify-center text-xl w-9 h-9 ltr:right-4 rtl:left-4 top-4 ltr:md:right-1 rtl:md:left-1 md:top-1 ltr:lg:right-4 rtl:lg:left-4 lg:top-4 ltr:xl:right-6 rtl:xl:left-6 xl:top-5 md:text-2xl  hover:text-gray-700 dark:text-white dark:text-opacity-50 dark:hover:text-opacity-90"
+            className="absolute z-50 flex items-center justify-center text-xl w-9 h-9 ltr:right-4 rtl:left-4 top-4 ltr:md:right-1 rtl:md:left-1 md:top-1 ltr:lg:right-4 rtl:lg:left-4 lg:top-4 ltr:xl:right-6 rtl:xl:left-6 xl:top-5 md:text-2xl hover:text-gray-700 dark:text-white dark:text-opacity-50 dark:hover:text-opacity-90"
             onClick={closeModal}
           >
             <HiXMark />
@@ -34,7 +35,7 @@ export default function PortfolioModal() {
                   src={image.thumbnail}
                   alt={title}
                   fill
-                  className="object-cover hover:opacity-90 transition-opacity"
+                  className="object-cover transition-opacity hover:opacity-90"
                 />
               </div>
             </div>
@@ -68,7 +69,7 @@ export default function PortfolioModal() {
                       Preview
                     </span>
                     <AnchorLink
-                      href={previewLink.URL ? previewLink.URL : "#"}
+                      href={previewLink.URL ? previewLink.URL : '#'}
                       className="hover:text-black dark:hover:text-white"
                     >
                       {previewLink.label}

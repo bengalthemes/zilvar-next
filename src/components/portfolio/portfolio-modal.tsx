@@ -1,7 +1,7 @@
 import { Portfolio } from '@/types';
 import Image from 'next/image';
-import AnchorLink from '../ui/AnchorLink';
-import { useModal } from '../ui/modal/ModalContext';
+import AnchorLink from '../ui/anchor-link';
+import { useModal } from '../ui/modal/modal-context';
 import { HiXMark } from 'react-icons/hi2';
 
 export default function PortfolioModal() {

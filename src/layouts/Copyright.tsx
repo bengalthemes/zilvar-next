@@ -1,4 +1,4 @@
-import AnchorLink from '@/components/ui/AnchorLink';
+import AnchorLink from '@/components/ui/anchor-link';
 import { siteSettings } from '@/settings/site-settings';
 
 export default function Copyright() {

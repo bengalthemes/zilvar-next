@@ -1,5 +1,5 @@
 import { Post } from '@/types';
-import AnchorLink from '../ui/AnchorLink';
+import AnchorLink from '../ui/anchor-link';
 import Image from 'next/image';
 
 export default function PostCard({

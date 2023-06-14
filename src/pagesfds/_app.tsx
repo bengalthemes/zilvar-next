@@ -6,8 +6,8 @@ import 'overlayscrollbars/overlayscrollbars.css';
 import { Poppins } from '@next/font/google';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import DrawersContainer from '@/components/ui/drawer-views/DrawerContainer';
-import ModalContainer from '@/components/ui/modal/ModalContainer';
+import DrawersContainer from '@/components/ui/drawer-views/drawer-container';
+import ModalContainer from '@/components/ui/modal/modal-container';
 import { useState } from 'react';
 
 export const poppinsFont = Poppins({

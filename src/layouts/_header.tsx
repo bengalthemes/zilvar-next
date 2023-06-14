@@ -1,6 +1,6 @@
-import { useDrawer } from '@/components/ui/drawer-views/DrawerContext';
+import { useDrawer } from '@/components/ui/drawer-views/drawer-context';
 import { FaUser } from 'react-icons/fa';
-import Logo from '@/components/ui/Logo';
+import Logo from '@/components/ui/logo';
 import { useActiveScroll } from '@/utils/use-active-scroll';
 import { Link } from 'react-scroll';
 
@@ -37,7 +37,7 @@ export default function Header() {
             <li className="relative inline-block w-full mx-4 lg:mx-5">
               <Link
                 activeClass="active"
-                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 cursor-pointer before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
+                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
                 to="home"
                 spy={true}
                 smooth={true}
@@ -49,7 +49,7 @@ export default function Header() {
             <li className="relative inline-block w-full mx-4 lg:mx-5">
               <Link
                 activeClass="active"
-                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 cursor-pointer before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
+                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
                 to="work"
                 spy={true}
                 smooth={true}
@@ -61,7 +61,7 @@ export default function Header() {
             <li className="relative inline-block w-full mx-4 lg:mx-5">
               <Link
                 activeClass="active"
-                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 cursor-pointer before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
+                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
                 to="client"
                 spy={true}
                 smooth={true}
@@ -73,7 +73,7 @@ export default function Header() {
             <li className="relative inline-block w-full mx-4 lg:mx-5">
               <Link
                 activeClass="active"
-                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 cursor-pointer before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
+                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
                 to="blog"
                 spy={true}
                 smooth={true}
@@ -85,7 +85,7 @@ export default function Header() {
             <li className="relative inline-block w-full mx-4 lg:mx-5">
               <Link
                 activeClass="active"
-                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 cursor-pointer before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
+                className="relative font-semibold block py-2.5 text-black leading-relaxed hover:text-gray-600 dark:text-white dark:hover:text-gray-200 before:absolute before:z-10 before:bottom-1 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gray-800 before:left-1/2 before:-translate-x-1/2 before:transition-all before:opacity-0 dark:before:bg-white cursor-pointer"
                 to="contact"
                 spy={true}
                 smooth={true}

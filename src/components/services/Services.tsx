@@ -1,9 +1,11 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import ServiceCard from "./ServiceCard";
-import { Service } from "@/types";
-import { Autoplay } from "swiper";
-import Alert from "../ui/Alert";
-import { useServicesQuery } from "@/rest-client/get-services";
+'use client';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import ServiceCard from './service-card';
+import { Service } from '@/types';
+import { Autoplay } from 'swiper';
+import Alert from '../ui/alert';
+import { useServicesQuery } from '@/rest-client/get-services';
 
 const breakpoints = {
   0: {

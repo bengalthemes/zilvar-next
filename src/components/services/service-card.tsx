@@ -1,5 +1,5 @@
-import { Service } from "@/types";
-import ProgressBar from "../ui/ProgressBar";
+import { Service } from '@/types';
+import ProgressBar from '../ui/progress-bar';
 // import * as DOMPurify from "dompurify";
 
 export default function ServiceCard({ service }: { service: Service }) {

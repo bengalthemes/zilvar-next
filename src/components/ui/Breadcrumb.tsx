@@ -1,5 +1,5 @@
 import { FaChevronRight } from 'react-icons/fa';
-import AnchorLink from './AnchorLink';
+import AnchorLink from './anchor-link';
 
 export default function Breadcrumb() {
   return (

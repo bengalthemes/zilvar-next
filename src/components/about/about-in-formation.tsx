@@ -1,5 +1,5 @@
 import { Information } from '@/types';
-import AnchorLink from '../ui/AnchorLink';
+import AnchorLink from '../ui/anchor-link';
 
 export default function AboutInformation({
   informationData,

@@ -1,5 +1,5 @@
 import React from 'react';
-import Breadcrumb from './Breadcrumb';
+import Breadcrumb from './breadcrumb';
 import { FaSearch } from 'react-icons/fa';
 
 export default function PageHeader() {

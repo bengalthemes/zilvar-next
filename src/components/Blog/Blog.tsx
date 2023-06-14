@@ -1,6 +1,6 @@
-import BlogCard from './PostCard';
-import NextPrevButton from '../ui/NextPrevButton';
-import AnchorLink from '../ui/AnchorLink';
+import BlogCard from './post-card';
+import NextPrevButton from '../ui/next-prev-button';
+import AnchorLink from '../ui/anchor-link';
 
 export default function Blog() {
   return (

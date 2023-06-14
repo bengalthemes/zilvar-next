@@ -2,7 +2,7 @@ import { Portfolio } from '@/types';
 import Image from 'next/image';
 import PortfolioTypeIconText from './portfolio-icon-text';
 import classNames from 'classnames';
-import { useModal } from '../ui/modal/ModalContext';
+import { useModal } from '../ui/modal/modal-context';
 
 export default function PortfolioCard({ portfolio }: { portfolio: Portfolio }) {
   const { title, image, type, category, categoryFilter } = portfolio;

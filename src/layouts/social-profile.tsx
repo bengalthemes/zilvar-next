@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { siteSettings } from '@/settings/site-settings';
-import AnchorLink from '@/components/ui/AnchorLink';
+import AnchorLink from '@/components/ui/anchor-link';
 
 function SocialProfile({ className }: { className?: string }) {
   return (

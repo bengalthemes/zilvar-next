@@ -1,18 +1,18 @@
-import { Fragment, useEffect } from "react";
-import dynamic from "next/dynamic";
-import { DRAWER_VIEW, useDrawer } from "./DrawerContext";
-import { Transition, Dialog } from "@headlessui/react";
+import { Fragment, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+import { DRAWER_VIEW, useDrawer } from './drawer-context';
+import { Transition, Dialog } from '@headlessui/react';
 
 const AboutSidebarView = dynamic(
-  () => import("@/components/about/AboutSidebarView")
+  () => import('@/components/about/about-sidebar-view')
 );
 const MobileDrawerMenu = dynamic(
-  () => import("@/components/ui/MobileDrawerMenu")
+  () => import('@/components/ui/mobile-drawer-menu')
 );
 
 function renderDrawerContent(view: DRAWER_VIEW | string) {
   switch (view) {
-    case "MOBILE_MENU":
+    case 'MOBILE_MENU':
       return <MobileDrawerMenu />;
     default:
       return <AboutSidebarView />;

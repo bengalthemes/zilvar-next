@@ -1,5 +1,5 @@
-import Copyright from '@/layouts/Copyright';
-import Widget from '@/layouts/Widget';
+import Copyright from '@/layouts/copyright';
+import Widget from '@/layouts/widget';
 
 export default function Footer() {
   return (

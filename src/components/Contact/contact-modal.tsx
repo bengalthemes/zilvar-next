@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../ui/forms/Input';
+import Input from '../ui/forms/input';
 
 export default function ContactModal() {
   return (

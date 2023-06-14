@@ -1,6 +1,6 @@
-import React from "react";
-import SubHeading from "./SubHeading";
-import cn from "classnames";
+import React from 'react';
+import SubHeading from './sub-heading';
+import cn from 'classnames';
 
 interface SectionHeadingProps {
   className?: string;
@@ -11,17 +11,17 @@ interface SectionHeadingProps {
 }
 
 export default function SectionHeading({
-  className = "mb-5 -mt-1 md:mb-0",
+  className = 'mb-5 -mt-1 md:mb-0',
   serialNo,
   subHeading,
   headingFirstText,
   headingLastText,
 }: SectionHeadingProps) {
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn('relative', className)}>
       {subHeading && <SubHeading title={subHeading} serialNo={serialNo} />}
       <h2 className="font-bold text-[32px] xl:text-[44px] mt-3.5 tracking-[1px] leading-snug">
-        {headingFirstText}{" "}
+        {headingFirstText}{' '}
         {headingLastText && (
           <span className="text-stroke-1">{headingLastText}.</span>
         )}

@@ -1,5 +1,5 @@
-import { Skill } from "@/types";
-import ProgressBar from "../ui/ProgressBar";
+import { Skill } from '@/types';
+import ProgressBar from '../ui/progress-bar';
 
 export default function Skills({ skillsData }: { skillsData: Skill[] }) {
   return (

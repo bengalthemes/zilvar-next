@@ -1,14 +1,14 @@
-import { Brand, Testimonial } from "@/types";
-import { Autoplay, Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import BrandCard from "./BrandCard";
-import TestimonialCard from "./TestimonialCard";
-import { useTestimonialsQuery } from "@/rest-client/get-testimonials";
-import { useBrandsQuery } from "@/rest-client/get-brands";
-import cn from "classnames";
-import { Element } from "react-scroll";
-import NextPrevButton from "../ui/NextPrevButton";
-import "swiper/css/navigation";
+import { Brand, Testimonial } from '@/types';
+import { Autoplay, Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import BrandCard from './brand-card';
+import TestimonialCard from './testimonial-card';
+import { useTestimonialsQuery } from '@/rest-client/get-testimonials';
+import { useBrandsQuery } from '@/rest-client/get-brands';
+import cn from 'classnames';
+import { Element } from 'react-scroll';
+import NextPrevButton from '../ui/next-prev-button';
+import 'swiper/css/navigation';
 
 const breakpoints = {
   0: {
@@ -68,9 +68,9 @@ export default function Testimonials() {
   return (
     <section
       className={cn(
-        "dark:bg-dark pt-[100px] md:pt-28 lg:pt-[130px] xl:pt-[150px]",
+        'dark:bg-dark pt-[100px] md:pt-28 lg:pt-[130px] xl:pt-[150px]',
         {
-          "pb-[100px] md:pb-28 lg:pb-[130px] xl:pb-[150px]":
+          'pb-[100px] md:pb-28 lg:pb-[130px] xl:pb-[150px]':
             !brandsData?.brands.data.length,
         }
       )}
@@ -103,8 +103,8 @@ export default function Testimonials() {
                   delay: 2000,
                 }}
                 navigation={{
-                  nextEl: "#testimonialSlideNext",
-                  prevEl: "#testimonialSlidePrev",
+                  nextEl: '#testimonialSlideNext',
+                  prevEl: '#testimonialSlidePrev',
                 }}
                 speed={1000}
               >

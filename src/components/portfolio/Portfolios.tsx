@@ -1,29 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
-import { usePortfoliosQuery } from "@/rest-client/get-portfolios";
-import SectionHeading from "../ui/SectionHeading";
-import Alert from "../ui/Alert";
-import { Portfolio } from "@/types";
-import PortfolioCard from "./PortfolioCard";
+import React, { useEffect, useRef, useState } from 'react';
+import { usePortfoliosQuery } from '@/rest-client/get-portfolios';
+import SectionHeading from '../ui/section-heading';
+import Alert from '../ui/alert';
+import { Portfolio } from '@/types';
+import PortfolioCard from './portfolio-card';
 
 export default function Portfolios() {
   const isotope = useRef();
-  const [filterKey, setFilterKey] = useState("filterItem");
+  const [filterKey, setFilterKey] = useState('filterItem');
   useEffect(() => {
     (async () => {
       // Dynamically load Isotope
-      const Isotope = (await import("isotope-layout")).default;
+      const Isotope = (await import('isotope-layout')).default;
 
       //@ts-ignore
-      isotope.current = new Isotope(".portfolioItemsContainer", {
-        itemSelector: ".filterItem",
+      isotope.current = new Isotope('.portfolioItemsContainer', {
+        itemSelector: '.filterItem',
         percentPosition: true,
         masonry: {
-          columnWidth: ".filterItem",
+          columnWidth: '.filterItem',
         },
         //@ts-ignore
         animationOptions: {
           duration: 750,
-          easing: "linear",
+          easing: 'linear',
           queue: false,
         },
       });
@@ -36,7 +36,7 @@ export default function Portfolios() {
 
   useEffect(() => {
     if (isotope.current) {
-      filterKey === "*"
+      filterKey === '*'
         ? isotope.current.arrange({ filter: `*` })
         : isotope.current.arrange({ filter: `.${filterKey}` });
     }
@@ -61,7 +61,7 @@ export default function Portfolios() {
           <ul className="portfolio-work-nav text-sm text-black font-semibold flex -mx-3 xl:-mb-1 -mb-0.5 flex-wrap md:-mb-2 lg:-mx-4">
             <li className="mx-3 lg:mx-4">
               <span
-                onClick={handleFilterKeyChange("*")}
+                onClick={handleFilterKeyChange('*')}
                 className="filter relative pt-1 pb-1.5 block md:py-2.5 hover:opacity-80 before:absolute before:bottom-1 before:w-1.5 before:h-1.5 before:bg-gray-800 before:transition-all before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:rounded-full leading-[1.85em] dark:text-white dark:before:bg-gray-500 active"
               >
                 All
@@ -69,7 +69,7 @@ export default function Portfolios() {
             </li>
             <li className="mx-3 lg:mx-4">
               <span
-                onClick={handleFilterKeyChange("web")}
+                onClick={handleFilterKeyChange('web')}
                 className="filter relative pt-1 pb-1.5 block md:py-2.5 hover:opacity-80 before:absolute before:bottom-1 before:w-1.5 before:h-1.5 before:bg-gray-800 before:transition-all before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:rounded-full leading-[1.85em] dark:text-white dark:before:bg-gray-500"
               >
                 Web
@@ -77,7 +77,7 @@ export default function Portfolios() {
             </li>
             <li className="mx-3 lg:mx-4">
               <span
-                onClick={handleFilterKeyChange("graphic")}
+                onClick={handleFilterKeyChange('graphic')}
                 className="filter relative pt-1 pb-1.5 block md:py-2.5 hover:opacity-80 before:absolute before:bottom-1 before:w-1.5 before:h-1.5 before:bg-gray-800 before:transition-all before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:rounded-full leading-[1.85em] dark:text-white dark:before:bg-gray-500"
               >
                 Graphic
@@ -85,7 +85,7 @@ export default function Portfolios() {
             </li>
             <li className="mx-3 lg:mx-4">
               <span
-                onClick={handleFilterKeyChange("brand")}
+                onClick={handleFilterKeyChange('brand')}
                 className="filter relative pt-1 pb-1.5 block md:py-2.5 hover:opacity-80 before:absolute before:bottom-1 before:w-1.5 before:h-1.5 before:bg-gray-800 before:transition-all before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:rounded-full leading-[1.85em] dark:text-white dark:before:bg-gray-500"
               >
                 Brand
@@ -93,7 +93,7 @@ export default function Portfolios() {
             </li>
             <li className="mx-3 lg:mx-4">
               <span
-                onClick={handleFilterKeyChange("app")}
+                onClick={handleFilterKeyChange('app')}
                 className="filter relative pt-1 pb-1.5 block md:py-2.5 hover:opacity-80 before:absolute before:bottom-1 before:w-1.5 before:h-1.5 before:bg-gray-800 before:transition-all before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:rounded-full leading-[1.85em] dark:text-white dark:before:bg-gray-500"
               >
                 App

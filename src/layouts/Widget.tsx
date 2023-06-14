@@ -1,8 +1,8 @@
 import { siteSettings } from '@/settings/site-settings';
 import Link from 'next/link';
-import SocialProfile from '@/layouts/SocialProfile';
+import SocialProfile from '@/layouts/social-profile';
 import Image from 'next/image';
-import AnchorLink from '@/components/ui/AnchorLink';
+import AnchorLink from '@/components/ui/anchor-link';
 
 function Widget() {
   const { author, footerLogo } = siteSettings;

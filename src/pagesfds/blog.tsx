@@ -1,5 +1,5 @@
-import BlogCard from '@/components/blog/PostCard';
-import PageHeader from '@/components/ui/PageHeader';
+import BlogCard from '@/components/blog/post-card';
+import PageHeader from '@/components/ui/page-header';
 import SEO from '@/components/ui/SEO';
 import Layout from '@/layouts/_layout';
 import { getPosts } from '@/utils/mdx-utils';

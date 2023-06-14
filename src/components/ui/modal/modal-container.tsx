@@ -1,11 +1,13 @@
 import { Fragment } from 'react';
 import dynamic from 'next/dynamic';
-import { useModal, MODAL_VIEW } from '@/components/ui/modal/ModalContext';
+import { useModal, MODAL_VIEW } from '@/components/ui/modal/modal-context';
 import { Dialog, Transition } from '@headlessui/react';
 
-const ContactModal = dynamic(() => import('@/components/contact/ContactModal'));
+const ContactModal = dynamic(
+  () => import('@/components/contact/contact-modal')
+);
 const PortfolioModal = dynamic(
-  () => import('@/components/portfolio/PortfolioModal')
+  () => import('@/components/portfolio/portfolio-modal')
 );
 
 function renderModalContent(view: MODAL_VIEW | string) {

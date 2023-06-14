@@ -1,8 +1,10 @@
-import SubHeading from '@/components/ui/SubHeading';
+'use client';
+
+import SubHeading from '@/components/ui/sub-heading';
 import Image from 'next/image';
-import { useDrawer } from '@/components/ui/drawer-views/DrawerContext';
+import { useDrawer } from '@/components/ui/drawer-views/drawer-context';
 import { Link } from 'react-scroll';
-import HeroWaveShape from './HeroWaveShape';
+import HeroWaveShape from './hero-wave-shape';
 import { FaChevronDown } from 'react-icons/fa';
 
 const heroData = {

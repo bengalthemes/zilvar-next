@@ -1,5 +1,5 @@
-import { useModal } from '@/components/ui/modal/ModalContext';
-import Button from '@/components/ui/Button';
+import { useModal } from '@/components/ui/modal/modal-context';
+import Button from '@/components/ui/button';
 
 export default function Contact() {
   const { openModal } = useModal();

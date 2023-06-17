@@ -9,7 +9,6 @@ export default function PostCard({
   post: Post;
   filePath: string;
 }) {
-  console.log(post.filePath, 'list');
   return (
     <article className="rounded-md overflow-hidden relative min-h-[375px] bg-white-smoke dark:bg-dark-smoke group">
       <div

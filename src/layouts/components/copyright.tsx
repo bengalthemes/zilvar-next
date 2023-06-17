@@ -7,7 +7,7 @@ export default function Copyright() {
   return (
     <div className="pt-8 border-t border-gray-light lg:pt-0 lg:border-t-0">
       <div className="container">
-        <div className="text-xs font-normal leading-loose tracking-widest text-center text-white">
+        <div className="text-sm font-normal leading-loose tracking-widest text-center text-white/80">
           © Copyright {currenYear} {name}. Template by{' '}
           <AnchorLink
             href={author.websiteUrl}

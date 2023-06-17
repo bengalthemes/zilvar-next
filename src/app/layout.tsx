@@ -1,8 +1,16 @@
 import { Poppins } from 'next/font/google';
 import QueryProvider from './providers/query-provider';
 import { Metadata } from 'next';
+import DrawersContainer from '@/components/ui/drawer-views/drawer-container';
 
+// external
+import 'swiper/css';
+import 'overlayscrollbars/overlayscrollbars.css';
+
+// base css file
 import './globals.css';
+import '../assets/css/customize-plugins.css';
+import ModalContainer from '@/components/ui/modal/modal-container';
 
 export const metadata: Metadata = {
   title: {
@@ -27,11 +35,8 @@ export default function RootLayout({
       <body className={`${poppins.variable}`}>
         <QueryProvider>
           {children}
-          {/* <ManagedUIContext>
-            <ManagedModal lang={lang} />
-            <ManagedDrawer lang={lang} />
-            <ToasterProvider />
-          </ManagedUIContext> */}
+          <ModalContainer />
+          <DrawersContainer />
         </QueryProvider>
       </body>
     </html>

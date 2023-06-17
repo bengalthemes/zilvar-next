@@ -1,17 +1,11 @@
-import Layout from "@/layouts/_layout";
-import { getPostBySlug, postFilePaths } from "@/utils/mdx-utils";
-import { MDXRemote } from "next-mdx-remote";
+import Layout from '@/layouts/default-layout';
+import { getPostBySlug, postFilePaths } from '@/utils/mdx-utils';
+import { MDXRemote } from 'next-mdx-remote';
 
-
-export default function PostPage({
-  source,
-  frontMatter,
-}) {
-
-  console.log(frontMatter, 'font')
+export default function PostPage({ source, frontMatter }) {
+  console.log(frontMatter, 'font');
   return (
     <Layout>
-      
       <article className="px-6 md:px-0">
         <header>
           <h1 className="text-3xl md:text-5xl dark:text-white text-center mb-12">
@@ -23,15 +17,13 @@ export default function PostPage({
         </header>
         <main>
           <article className="prose dark:prose-dark">
-            <MDXRemote {...source}  />
+            <MDXRemote {...source} />
           </article>
         </main>
-        
       </article>
     </Layout>
   );
 }
-
 
 export const getStaticProps = async ({ params }) => {
   const { mdxSource, data } = await getPostBySlug(params.slug);

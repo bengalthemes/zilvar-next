@@ -1,4 +1,6 @@
-import { Fragment, useEffect } from 'react';
+'use client';
+
+import { Fragment } from 'react';
 import dynamic from 'next/dynamic';
 import { DRAWER_VIEW, useDrawer } from './drawer-context';
 import { Transition, Dialog } from '@headlessui/react';

@@ -1,13 +1,24 @@
+'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import { usePortfoliosQuery } from '@/rest-client/get-portfolios';
 import SectionHeading from '../ui/section-heading';
 import Alert from '../ui/alert';
 import { Portfolio } from '@/types';
 import PortfolioCard from './portfolio-card';
+import classNames from 'classnames';
+
+const portfolioNav = [
+  { id: 1, label: 'All', filterSelect: '*' },
+  { id: 2, label: 'Web', filterSelect: 'web' },
+  { id: 3, label: 'Graphic', filterSelect: 'graphic' },
+  { id: 4, label: 'Brand', filterSelect: 'brand' },
+  { id: 5, label: 'App', filterSelect: 'app' },
+];
 
 export default function Portfolios() {
   const isotope = useRef();
-  const [filterKey, setFilterKey] = useState('filterItem');
+  const [filterKey, setFilterKey] = useState('*');
   useEffect(() => {
     (async () => {
       // Dynamically load Isotope
@@ -37,8 +48,10 @@ export default function Portfolios() {
   useEffect(() => {
     if (isotope.current) {
       filterKey === '*'
-        ? isotope.current.arrange({ filter: `*` })
-        : isotope.current.arrange({ filter: `.${filterKey}` });
+        ? // @ts-ignore
+          isotope.current.arrange({ filter: `*` })
+        : // @ts-ignore
+          isotope.current.arrange({ filter: `.${filterKey}` });
     }
   }, [filterKey]);
 
@@ -46,6 +59,7 @@ export default function Portfolios() {
 
   const { data, isLoading, error } = usePortfoliosQuery();
 
+  console.log(filterKey, 'test');
   if (error) return <Alert message={error?.message} />;
 
   return (
@@ -59,14 +73,22 @@ export default function Portfolios() {
             headingLastText="WORKS"
           />
           <ul className="portfolio-work-nav text-sm text-black font-semibold flex -mx-3 xl:-mb-1 -mb-0.5 flex-wrap md:-mb-2 lg:-mx-4">
-            <li className="mx-3 lg:mx-4">
-              <span
-                onClick={handleFilterKeyChange('*')}
-                className="filter relative pt-1 pb-1.5 block md:py-2.5 hover:opacity-80 before:absolute before:bottom-1 before:w-1.5 before:h-1.5 before:bg-gray-800 before:transition-all before:left-1/2 before:opacity-0 before:-translate-x-1/2 before:rounded-full leading-[1.85em] dark:text-white dark:before:bg-gray-500 active"
-              >
-                All
-              </span>
-            </li>
+            {portfolioNav.map((item) => (
+              <li className="mx-3 lg:mx-4" key={item.id}>
+                <span
+                  onClick={handleFilterKeyChange(item.filterSelect)}
+                  className={classNames(
+                    'filter relative cursor-pointer pt-1 pb-1.5 block md:py-2.5 hover:opacity-80 before:absolute before:w-1.5 before:h-1.5 before:bg-gray-800 before:transition-all before:left-1/2  before:-translate-x-1/2 before:rounded-full leading-[1.85em] dark:text-white dark:before:bg-gray-500',
+                    item.filterSelect === filterKey
+                      ? 'before:bottom-0 before:opacity-100'
+                      : 'before:bottom-1 before:opacity-0'
+                  )}
+                >
+                  {item.label}
+                </span>
+              </li>
+            ))}
+            {/*             
             <li className="mx-3 lg:mx-4">
               <span
                 onClick={handleFilterKeyChange('web')}
@@ -98,7 +120,7 @@ export default function Portfolios() {
               >
                 App
               </span>
-            </li>
+            </li> */}
           </ul>
         </div>
         {isLoading ? (

@@ -1,3 +1,5 @@
+'use client';
+
 import { useModal } from '@/components/ui/modal/modal-context';
 import Button from '@/components/ui/button';
 

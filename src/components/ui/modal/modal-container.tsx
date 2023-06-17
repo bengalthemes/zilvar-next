@@ -1,3 +1,5 @@
+'use client';
+
 import { Fragment } from 'react';
 import dynamic from 'next/dynamic';
 import { useModal, MODAL_VIEW } from '@/components/ui/modal/modal-context';

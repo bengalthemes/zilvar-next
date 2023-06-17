@@ -1,3 +1,5 @@
+'use client';
+
 import { Brand, Testimonial } from '@/types';
 import { Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,7 +8,6 @@ import TestimonialCard from './testimonial-card';
 import { useTestimonialsQuery } from '@/rest-client/get-testimonials';
 import { useBrandsQuery } from '@/rest-client/get-brands';
 import cn from 'classnames';
-import { Element } from 'react-scroll';
 import NextPrevButton from '../ui/next-prev-button';
 import 'swiper/css/navigation';
 

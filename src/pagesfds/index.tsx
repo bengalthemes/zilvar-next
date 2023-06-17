@@ -5,7 +5,7 @@ import Portfolios from '@/components/portfolio/portfolios';
 import Services from '@/components/services/services';
 import Testimonials from '@/components/testimonial/testimonials';
 import SEO from '@/components/ui/SEO';
-import Layout from '@/layouts/_layout';
+import Layout from '@/layouts/default-layout';
 import React from 'react';
 import { Element } from 'react-scroll';
 

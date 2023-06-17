@@ -24,7 +24,7 @@ export default function Blog() {
             className="ltr:md:pl-5 rtl:md:pr-5 md:pb-2.5"
           />
         </div>
-        <div className="swiper blog-posts-carousel">
+        {/* <div className="swiper blog-posts-carousel">
           <div className="swiper-wrapper">
             <div className="swiper-slide">
               <BlogCard />
@@ -42,7 +42,7 @@ export default function Blog() {
               <BlogCard />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex justify-center pt-10 md:pt-12 md:mt-1">
           <AnchorLink

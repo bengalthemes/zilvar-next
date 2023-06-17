@@ -1,9 +1,10 @@
+'use client';
+
 import { useDrawer } from '@/components/ui/drawer-views/drawer-context';
 import { FaUser } from 'react-icons/fa';
 import Logo from '@/components/ui/logo';
 import { useActiveScroll } from '@/utils/use-active-scroll';
 import { Link } from 'react-scroll';
-
 import { useRef } from 'react';
 type DivElementRef = React.MutableRefObject<HTMLDivElement>;
 
